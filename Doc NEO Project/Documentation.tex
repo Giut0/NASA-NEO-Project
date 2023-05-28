@@ -1,0 +1,97 @@
+\documentclass[italian,12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\title{Università degli studi di Bari facoltà di scienze MM.FF.NN}
+\date{} % clear date
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdfpagemode=FullScreen,
+}
+\graphicspath{ {./images/} }
+\usepackage{tocloft}
+
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\begin{center}
+		\huge	\textbf{Progetto Data Mining} \\
+		\Large \textbf{NASA - Nearest Earth Objects hazard detection}
+	\end{center}
+	
+	
+	
+	\begin{center}
+		by \\
+		\Large \textbf{Vito Proscia mat. 735975}
+	\end{center}
+
+	
+	\begin{figure}[hb]
+		\centering
+		\includegraphics[width=5cm]{image.png}
+	\end{figure}
+	
+	\vfill
+	\begin{center}
+		Anno accadenico 2022-2023
+	\end{center}
+	
+	\newpage
+	
+	\tableofcontents
+
+	
+	\newpage
+
+	
+	\section{Introduzione}
+	
+	\subsection{Descrizione del dataset}
+	
+	
+	\href{https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects/}{Near-Earth Objects} (NEO) dataset contiene una serie di informazioni, raccolte dalla NASA, che caratterizzano degli oggetti rilevati vicino alla terra, molti di questi oggetti sono a migliaia di chilometri dalla superficie terrestre, ma su scala astronomica queste distanze sono molto piccole e possono influenzare fenomeni naturali, quali per es: ... \\
+	La natura dei Near-Earth Objects (NEO) si può dividere in:
+	\begin{itemize}
+		\item \textbf{Comete}: corpo celeste relativamente piccolo, composto da gas ghiacciati frammenti di rocce e metalli
+		\item \textbf{Asteroidi}: corpi minori di un sistema planetario originati dallo stesso processo di formazione dei pianeti ma le cui fasi di accrescimento si sono interrotte più o meno presto
+	\end{itemize}
+	
+
+	\subsection{Analisi features}
+	Il dataset inizialmente si compone di dieci features che vanno a descrivere una serie di caratteristiche dei corpi celesti registrati, in particolare abbiamo:
+	
+	\begin{enumerate}
+		\item	\textit{id} [numeric]: identificatore univoco per ogno oggetto
+		\item 	\textit{name} [string]: nominativo dato dalla NASA
+		\item \textit{est\_diameter\_min} [numeric]: diametro minimo stimato (Km)
+		\item \textit{est\_diameter\_max} [numeric]: diametro massimo stimato (Km)
+		\item \textit{relative\_velocity} [numeric]: Velocità relativa rispetto alla terra (Km/h)
+		\item \textit{miss\_distance }[numeric]: ???
+		\item \textit{orbiting\_body} [string]: Corpo rispetto al quale l’oggetto sta orbitando
+		\item \textit{sentry\_object} [boolean]: Copro incluso o meno in sentry (sistema di monitoraggio automatico delle collisioni)
+		\item \textit{absolute\_magnitude} [numeric]: descrizione della luminosità dell’oggetto (energia radiata dal corpo al secondo)
+		\item \textit{hazardous} [boolean]: Indica se il corpo è pericoloso o meno
+	
+		
+	\end{enumerate}
+	
+	
+
+	
+
+	
+\end{document}

@@ -1,0 +1,4 @@
+\babel@toc {nil}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Descrizione del dataset}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Analisi features}{3}{subsection.1.2}%
