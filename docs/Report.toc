@@ -1,4 +1,9 @@
 \babel@toc {nil}{}\relax 
 \contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Descrizione del dataset}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Analisi features}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.1}Contesto}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Definizione obiettivo principale}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Analisi del dataset}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Descrizione features}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Analisi esplorativa dei dati}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Analisi delle input features}{4}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Analisi della target feature}{5}{subsection.2.3}%
