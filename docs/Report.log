@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.2.16)  29 MAY 2023 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.2.16)  30 MAY 2023 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,7 +331,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 LaTeX Warning: No \author given.
 
-<./images//image.png, id=32, 450.68375pt x 361.35pt>
+<./images//image.png, id=40, 450.68375pt x 361.35pt>
 File: ./images//image.png Graphic file (type png)
 <use ./images//image.png>
 Package pdftex.def Info: ./images//image.png  used on input line 45.
@@ -374,42 +374,47 @@ i ampiamente
  []
 
 [3]
-Overfull \hbox (1.0876pt too wide) in paragraph at lines 97--98
+Overfull \hbox (8.84407pt too wide) in paragraph at lines 86--87
+\T1/cmr/m/n/12 apprendimento Automatico, scritto in Java e sviluppato presso Un
+iversity
+ []
+
+
+Overfull \hbox (1.0876pt too wide) in paragraph at lines 105--106
 []\T1/cmr/m/it/12 absolute_magnitude \T1/cmr/m/n/12 [numeric]: descrizione dell
 a luminosità dell'oggetto
  []
 
-
-Overfull \hbox (5.38959pt too wide) in paragraph at lines 113--114
+[4]
+Overfull \hbox (5.38959pt too wide) in paragraph at lines 121--122
 \T1/cmr/m/n/12 e \T1/cmr/m/it/12 est_diameter_max\T1/cmr/m/n/12 , andando a des
 crivere la dimensione di diametro massima
  []
 
 
-Overfull \hbox (54.24855pt too wide) in paragraph at lines 113--114
+Overfull \hbox (54.24855pt too wide) in paragraph at lines 121--122
 \T1/cmr/m/n/12 che andrebbe a rappresentare la media matematica dei due valori 
 (\T1/cmr/m/it/12 est_diameter_mean\T1/cmr/m/n/12 ). 
  []
 
-[4]
-<./images//target_distribution.png, id=79, 328.22626pt x 196.735pt>
+<./images//target_distribution.png, id=90, 328.22626pt x 196.735pt>
 File: ./images//target_distribution.png Graphic file (type png)
 <use ./images//target_distribution.png>
 Package pdftex.def Info: ./images//target_distribution.png  used on input line 
-121.
+129.
 (pdftex.def)             Requested size: 227.62204pt x 136.43472pt.
- [5 <./images//target_distribution.png>] (./Report.aux)
+[5 <./images//target_distribution.png>] (./Report.aux)
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 9CB50EDD1625FFF01726461CD49F1547;1139.
+(rerunfilecheck)             Checksum: D62600274B926A903F8F76ADEB51445B;1342.
  ) 
 Here is how much of TeX's memory you used:
- 9668 strings out of 480247
- 152925 string characters out of 5896151
- 452816 words of memory out of 5000000
- 27473 multiletter control sequences out of 15000+600000
+ 9672 strings out of 480247
+ 152975 string characters out of 5896151
+ 452811 words of memory out of 5000000
+ 27475 multiletter control sequences out of 15000+600000
  480875 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,593b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,63p,593b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600
 pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.60
 0pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.6
@@ -420,10 +425,10 @@ pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.60
 88.600pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2
 074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on Report.pdf (5 pages, 167186 bytes).
+Output written on Report.pdf (5 pages, 171315 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 361 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

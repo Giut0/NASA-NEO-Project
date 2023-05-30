@@ -67,7 +67,7 @@
 	La natura dei Near-Earth Objects (NEO) si può dividere in:
 	\begin{itemize}
 		\item \textbf{Comete}: corpo celeste relativamente piccolo, composto da gas ghiacciati frammenti di rocce e metalli
-		\item \textbf{Asteroidi}: corpi minori di un sistema planetario originati dallo stesso processo di formazione dei pianeti ma le cui fasi di accrescimento si sono interrotte più o meno presto
+		\item \textbf{Asteroidi}: corpi minori di un sistema planetario originati dallo stesso processo di formazione dei pianeti ma le cui fasi di accrescimento si sono interrotte più o meno presto, oppure formati attraverso la collisione tra altri corpi celesti, sono composti principalmente da silicati di nichel, ferro e magnesio
 	\end{itemize}
 
 	
@@ -75,9 +75,17 @@
 	L'obiettivo principale del progetto è quello di addestrare un modello per andare a predirre, in base ad alcuni parametri, quali corpi celesti rilevati attorno alla terra possono provocare danni, questo perchè è ormai ampiamente accettato dalla comunità scientifica che le collisioni di asteroidi con la Terra avvenute in passato hanno avuto un ruolo significativo nel disegnare la storia geologica e biologica del pianeta, per questo risulta interessante effettuare un task di classificazione binaria che coinvolge la feature \textit{hazardous} con classi:
 	\begin{itemize}
 		\item \textbf{True}: oggetto potenzialmente pericoloso
-		\item \textbf{False}: oggetto non pericoloso.
+		\item \textbf{False}: oggetto non pericoloso
 	\end{itemize}
 	
+	\subsection{Tool utilizzati}
+	Per la sperimentazione sono stati usati diversi stumenti, quali:
+	
+		\begin{itemize}
+			\item \href{https://colab.research.google.com/}{Google Colab}, strumento  presente nella suite Google che consente di scrivere python notebook direttamente dal proprio browser, utilizzando risorse messe a disposizione da remoto. 
+			\item \href{https://www.cs.waikato.ac.nz/~ml/weka/}{Weka}, software contenente una collezione di algoritmi per data Mining e apprendimento Automatico, scritto in Java e sviluppato presso University of Waikato New Zealand
+			
+		\end{itemize}
 
 
 	\section{Analisi del dataset}
