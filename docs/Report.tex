@@ -4,6 +4,10 @@
 \usepackage{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\definecolor{myblue}{rgb}{0.152,0.690,0.894} %39,176,228
+\definecolor{mygrey}{rgb}{0.062, 0.419,0.639}
 \title{Università degli studi di Bari facoltà di scienze MM.FF.NN}
 \date{} % clear date
 \hypersetup{
@@ -106,7 +110,7 @@
 		\item \textit{hazardous} [boolean]: Indica se il corpo è pericoloso o meno
 	\end{enumerate}
 	
-	\subsection{Analisi esplorativa dei dati}
+	\subsection{Preparazione dati}
 	
 	\subsubsection{Analisi delle input features}
 	Andando a considerare direttamente il dataset come ci vine fornito ci sono una serie di problematiche legate ad alcune features, alcune di queste sono inutili per lo scopo di addestramento, quali: 
@@ -120,16 +124,27 @@
 	
 	Un'altra considerazione si potrebbe fare sulle features \textit{est\_diameter\_min} e \textit{est\_diameter\_max}, andando a descrivere la dimensione di diametro massima e minima, si potrebbero accopare i dati delle due caratteristiche con un'unica che andrebbe a rappresentare la media matematica dei due valori (\textit{est\_diameter\_mean}).
 	
-	\subsection{Analisi della target feature}
+	
+	\subsubsection{Analisi della target feature}
 	
 	Il "problema" più grande del lavoro riguarda la natura delle osservazioni inerenti alla target feature \textit{hazardous}, che presenta una distrubuzione di valori fortemente sbilanciata ($90.3\%$ per false e $9.7\%$ per True)
+	\\
+	\linebreak
+	\linebreak
+	\begin{center}
+	\begin{tikzpicture}[scale=0.9]
+		\pie[color={myblue, mygrey}, text=pin]{90.3/false 82.0k, 9.7/true 8.8k}
+	\end{tikzpicture}
+\end{center}
 	
-		\begin{figure}[hb]
-			\centering
-			\includegraphics[width=8cm]{target_distribution.png}
-		\end{figure}
+	\subsubsection{Oversampling vs Undersampling}
 	
-	\section{title}
+	\section{Machine Learning}
+
+	\section{Analisi esplorativa dei dati}
+	
+	\section{Conclusioni}
+	
 
 	
 \end{document}
