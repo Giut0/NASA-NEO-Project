@@ -3,7 +3,17 @@
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 \usepackage{graphicx}
+\usepackage{subfig}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{placeins}
+\usepackage{svg}
+\definecolor{myblue}{rgb}{0.152,0.690,0.894} %39,176,228
+\definecolor{mygrey}{rgb}{0.062, 0.419,0.639}
 \title{Università degli studi di Bari facoltà di scienze MM.FF.NN}
 \date{} % clear date
 \hypersetup{
@@ -16,12 +26,14 @@
 \graphicspath{ {./images/} }
 \usepackage{tocloft}
 
-
 \cftsetindents{section}{0em}{2em}
 \cftsetindents{subsection}{0em}{2em}
 
 \renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
 \renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
 
 \setcounter{tocdepth}{2}
 \begin{document}
@@ -106,7 +118,7 @@
 		\item \textit{hazardous} [boolean]: Indica se il corpo è pericoloso o meno
 	\end{enumerate}
 	
-	\subsection{Analisi esplorativa dei dati}
+	\subsection{Preparazione dati}
 	
 	\subsubsection{Analisi delle input features}
 	Andando a considerare direttamente il dataset come ci vine fornito ci sono una serie di problematiche legate ad alcune features, alcune di queste sono inutili per lo scopo di addestramento, quali: 
@@ -120,16 +132,66 @@
 	
 	Un'altra considerazione si potrebbe fare sulle features \textit{est\_diameter\_min} e \textit{est\_diameter\_max}, andando a descrivere la dimensione di diametro massima e minima, si potrebbero accopare i dati delle due caratteristiche con un'unica che andrebbe a rappresentare la media matematica dei due valori (\textit{est\_diameter\_mean}).
 	
-	\subsection{Analisi della target feature}
+	
+	\subsubsection{Analisi della target feature}
 	
 	Il "problema" più grande del lavoro riguarda la natura delle osservazioni inerenti alla target feature \textit{hazardous}, che presenta una distrubuzione di valori fortemente sbilanciata ($90.3\%$ per false e $9.7\%$ per True)
+	\\
+	\linebreak
+	\linebreak
+	\begin{center}
+	\begin{tikzpicture}[scale=0.9]
+		\pie[color={myblue, mygrey}, text=pin]{90.3/false 82.0k, 9.7/true 8.8k}
+	\end{tikzpicture}
+\end{center}
 	
-		\begin{figure}[hb]
-			\centering
-			\includegraphics[width=8cm]{target_distribution.png}
-		\end{figure}
+	\subsubsection{Oversampling vs Undersampling}
 	
-	\section{title}
+	L’oversampling e l’undersampling sono due metodi per andare a risolvere lo sbilanciamento delle classi target, in particolare l’undersampling prevede il ridimensionamento di una classe prelevando da una popolazione un suo sottoinsieme, questo si applicherebbe alla classe più numerosa, mentre l’oversampling sposta il focus sulla classe con meno occorrenze andando a creare “sinteticamente” delle nuove osservazioni a partire da quelle già a disposizione.
+	
+	\subsubsection{Approccio ibrido}
+	Nel nostro caso, come già accennato, le classi della target feature \textit{hazardous} (true/false) sono molto sbilanciate (causa del fatto che per fortuna sono pochi i corpi celesti che si rivelano potenzialmente pericolosi), se da una parte i \textit{false} superano gli 80k, dall'altra i \textit{true} arrivano a malapena a 8k, quindi se applicassimo una tecnica di undersampling si avrebbe un’enorme perdita di informazioni, mentre se usassimo l’oversampling, per bilanciare i dati avremo moltissimi dati sintetici, per questo sarebbe meglio usare una tecnica ibrida.
+	\linebreak
+	\linebreak
+	\textbf{Algortimo: SMOTE-ENN} \\
+	L’algoritmo SMOTE-ENN [Batista et al 2004] combina l’abilità di SMOTE (Synthetic Minority Oversampling)  di generare istanze sintetiche per la classe minoritaria, con quella di ENN (Edited Nearest Neighbor) [Wilson 1972] di eliminare da entrambe le classi alcune osservazioni.
+	\\
+	
+	\begin{algorithm}
+		\caption{SMOTE-ENN}
+		\begin{algorithmic}
+			\Require Tr : Training set, \\ p: number of nearest neighbors in SMOTE, \\ k: number of nearest neighbors in ENN
+			\Ensure New\_Tr : Training set after using SMOTE-ENN \\
+			\textbf{1.} Divide Tr into positive and neative subsets: \\ $Tr \leftarrow Pos \cup Neg;$  \\
+			\textbf{2}. Oversampling the minority class using SMOTE to balance calss distribution: \\
+			$New\_Pos \leftarrow SMOTE(Pos, p);$ \\
+			$|New\_Pos| = |Neg|;$ \\
+			\textbf{3.} $New\_Tr \leftarrow New\_Pos \cup Neg;$ \\
+			\textbf{4.} Remove noisy examples using ENN: \\
+			$New\_Tr \leftarrow ENN(New\_Tr);$
+		\end{algorithmic}
+	\end{algorithm}
+	
+
+	\begin{figure}[ht!]
+		\centering
+		\subfloat[Prima di SMOTE-ENN]{%
+			\includegraphics[scale=0.5]{output1.png}%
+		}%
+		\subfloat[Dopo SMOTE-ENN]{%
+			\includegraphics[scale=0.5]{output2.png}%
+		}%
+	\end{figure}
+	
+	
+
+
+	\section{Machine Learning}
+
+	\section{Analisi esplorativa dei dati}
+
+	\section{Conclusioni}
+	
 
 	
 \end{document}
