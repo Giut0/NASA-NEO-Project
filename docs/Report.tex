@@ -12,6 +12,7 @@
 \usepackage{algorithmicx}
 \usepackage{placeins}
 \usepackage{svg}
+\usepackage{tabularx}
 \definecolor{myblue}{rgb}{0.152,0.690,0.894} %39,176,228
 \definecolor{mygrey}{rgb}{0.062, 0.419,0.639}
 \title{Università degli studi di Bari facoltà di scienze MM.FF.NN}
@@ -24,7 +25,7 @@
 	pdfpagemode=FullScreen,
 }
 \graphicspath{ {./images/} }
-\usepackage{tocloft}
+\RequirePackage[subfigure]{tocloft}
 
 \cftsetindents{section}{0em}{2em}
 \cftsetindents{subsection}{0em}{2em}
@@ -89,6 +90,9 @@
 		\item \textbf{True}: oggetto potenzialmente pericoloso
 		\item \textbf{False}: oggetto non pericoloso
 	\end{itemize}
+	Inoltre si vogliono comparare le prestazioni di vari modelli addestrati con tecniche diverse per evidenziare la differenza nell'addrestamento utilizzando un dataset fortemente sbilanciato.
+	In particolare si applicheranno tecniche di bilianciamento delle classi (resampling) che agiscono sui dati e tecniche di addestramento che vanno a considerare lo sbilanciamento (cost-sensitive learning) che riguardano più la controparte algoritmica. 
+	
 	
 	\subsection{Tool utilizzati}
 	Per la sperimentazione sono stati usati diversi stumenti, quali:
@@ -144,25 +148,28 @@
 		\pie[color={myblue, mygrey}, text=pin]{90.3/false 82.0k, 9.7/true 8.8k}
 	\end{tikzpicture}
 \end{center}
+
+	\section{Resampling per lo sbilanciamento delle classi}
+	Il resampling è un tecnica (data focsed) usata per bilanciare le osservazioni di ogni classe andando a generarne di nuove o eliminandole per risolvere il problema dello sblianciamento.
 	
-	\subsubsection{Oversampling vs Undersampling}
-	
+	\subsection{Oversampling vs Undersampling}
+
 	L’oversampling e l’undersampling sono due metodi per andare a risolvere lo sbilanciamento delle classi target, in particolare l’undersampling prevede il ridimensionamento di una classe prelevando da una popolazione un suo sottoinsieme, questo si applicherebbe alla classe più numerosa, mentre l’oversampling sposta il focus sulla classe con meno occorrenze andando a creare “sinteticamente” delle nuove osservazioni a partire da quelle già a disposizione.
 	
-	\subsubsection{Approccio ibrido}
+	\subsection{Approccio ibrido}
 	Nel nostro caso, come già accennato, le classi della target feature \textit{hazardous} (true/false) sono molto sbilanciate (causa del fatto che per fortuna sono pochi i corpi celesti che si rivelano potenzialmente pericolosi), se da una parte i \textit{false} superano gli 80k, dall'altra i \textit{true} arrivano a malapena a 8k, quindi se applicassimo una tecnica di undersampling si avrebbe un’enorme perdita di informazioni, mentre se usassimo l’oversampling, per bilanciare i dati avremo moltissimi dati sintetici, per questo sarebbe meglio usare una tecnica ibrida.
 	\linebreak
+	\subsubsection{SMOTE-ENN}
+	L’algoritmo SMOTE-ENN [Batista et al 2004] combina l’abilità di SMOTE (Synthetic Minority Oversampling)  di generare istanze sintetiche per la classe minoritaria, con quella di ENN (Edited Nearest Neighbor) [Wilson 1972] di eliminare da entrambe le classi alcune osservazioni. \\
 	\linebreak
-	\textbf{Algortimo: SMOTE-ENN} \\
-	L’algoritmo SMOTE-ENN [Batista et al 2004] combina l’abilità di SMOTE (Synthetic Minority Oversampling)  di generare istanze sintetiche per la classe minoritaria, con quella di ENN (Edited Nearest Neighbor) [Wilson 1972] di eliminare da entrambe le classi alcune osservazioni.
-	\\
+	L'algoritmo, come dice il nome, è basato su SMOTE, tecnica usata per la creazione di istanze sintetiche della classe minoritaria, andando a aggiungere nuove istanze con valori mediati tra i $k$ vicini di una osservazione della classe, prorpio per questo, teoricamente, nella nostra situazione non dovrebbe performare troppo bene, avendo le istanze della classe minoritaria molto vicine a quella della classe maggioritaria, creando così istanze sintetiche con valori mediati tra classi diverse.
 	
 	\begin{algorithm}
 		\caption{SMOTE-ENN}
 		\begin{algorithmic}
-			\Require Tr : Training set, \\ p: number of nearest neighbors in SMOTE, \\ k: number of nearest neighbors in ENN
-			\Ensure New\_Tr : Training set after using SMOTE-ENN \\
-			\textbf{1.} Divide Tr into positive and neative subsets: \\ $Tr \leftarrow Pos \cup Neg;$  \\
+			\Require $Tr$ : Training set, \\ $p$: number of nearest neighbors in SMOTE, \\ $k$: number of nearest neighbors in ENN
+			\Ensure $New\_Tr$ : Training set after using SMOTE-ENN \\
+			\textbf{1.} Divide $Tr$ into positive and neative subsets: \\ $Tr \leftarrow Pos \cup Neg;$  \\
 			\textbf{2}. Oversampling the minority class using SMOTE to balance calss distribution: \\
 			$New\_Pos \leftarrow SMOTE(Pos, p);$ \\
 			$|New\_Pos| = |Neg|;$ \\
@@ -171,9 +178,8 @@
 			$New\_Tr \leftarrow ENN(New\_Tr);$
 		\end{algorithmic}
 	\end{algorithm}
-	
 
-	\begin{figure}[ht!]
+	\begin{figure}[!ht]
 		\centering
 		\subfloat[Prima di SMOTE-ENN]{%
 			\includegraphics[scale=0.5]{output1.png}%
@@ -182,6 +188,77 @@
 			\includegraphics[scale=0.5]{output2.png}%
 		}%
 	\end{figure}
+	\subsubsection{ADASYN}
+	L'algoritmo ADASYN (Adaptive Synthetic) si basa sull'idea di generare sinteticamente dei nuovi dati per la classe minoritaria considerando la distribuzione delle osservazioni della sudetta classe. Vengono geneari più dati a partire dalle osservazioni, della classe minoritaria, che sono più dififcili da imparare. \\
+	La chiave di ADASYN è l'uso della distribuzione dei pesi $\hat{r_i}$ come criterio per decidere quante osservazioni sintetiche creare per ogni esempio della classe minoritaria.
+	
+		\begin{algorithm}
+		\caption{ADASYN}
+		\begin{algorithmic}
+			\Require $Tr$ : Training set, \\ $m\_s$: number of samples of minority class, \\ $m\_l$: number of samples of majority class.
+			\Ensure $Tr\_res$ : Training set resampled \\
+			\textbf{1.} Calculate the degree of class imbalance: $$d = \frac{m_s}{m_l} \in (0, 1]$$  \\
+			\textbf{2}. \textbf{If} {$d < d_{th}$} ($d_{th}$ preset threshold) \\
+						\quad\textbf{a)} Calculate the number of synthetic data examples that
+						need to be generated for the minority class: $$G = (m_l - m_s)\beta$$
+						\quad Where $\beta \in [0, 1]$ balance level after generation of the synthetic data. \\
+						\quad \textbf{b)} \textbf{For each} example $x_i \in minorityClass$ find $k$ nearest neighbors and calculate: $$r_i = \frac{\Delta_i}{k} = \frac{\# majotiry\_class\_neighbors}{k}, i = 1, \dots m_s$$
+						\quad \textbf{c)} Normalize $r_i$ according to: $$\hat{r_i} = \frac{r_i}{\sum_{j = 1}^{m_s} r_j}$$
+						\quad \textbf{d)} Calculate the number of synthetic data examples for each $x_i$: $$g_i = \hat{r_i} G$$
+						\quad \textbf{e)} \textbf{For} $1$ \textbf{to} $g_i$ \\
+						\quad \quad \textbf{i)} Randomly choose one minority data example, $x_{zi}$,
+						from the $k$ nearest neighbors for data $x_i$ \\
+						\quad \quad \textbf{ii)} Generate the synthetic data example: $$s_i = x_i + (x_{zi} - x_i)\lambda$$
+						Where $(x_{zi} - x_i)$ is the difference vector and $\lambda \in [0,1]$ is a random number. \\
+
+		\end{algorithmic}
+	\end{algorithm}
+	\begin{figure}[!ht]
+	\centering
+	\subfloat[Prima di ADASYN]{%
+		\includegraphics[scale=0.5]{output1.png}%
+	}%
+	\subfloat[Dopo ADASYN]{%
+		\includegraphics[scale=0.5]{output3.png}%
+	}%
+\end{figure}
+	
+	\section{Cost-Sensitive learning per lo sbilanciamento delle classi}
+	Il \textit{cost-sensitive learning} è un task di data mining che tiene in considerazione il costo di una classificazione sbagliata (\textit{misclassification cost}), andnado a considerare una classificazione binaria, ad ogni tipo di predizione viene asseganto un costo, formando una \textit{cost matrix}: \\
+	\begin{center}
+		\begin{tabularx}{0.8\textwidth} { 
+				| >{\centering\arraybackslash}X 
+				| >{\centering\arraybackslash}X 
+				| >{\centering\arraybackslash}X | }
+			\hline
+			 & Actual negative & Actual positive \\
+			\hline
+			Predict negative & $C(0, 0)$ TN & $C(0, 1)$ FN \\
+			\hline
+			Predict positive  & $C(1, 0)$ FP & $C(1, 1)$ TN \\
+			\hline
+		\end{tabularx}
+	\end{center}
+
+	Dove $C(i, j)$ rappresenta il costo della classificazione dove $i$ è la predizione, mentre $j$ è la classe corretta. \\
+	Il cost-sensitive learning è utile in caso di sbilanciamento delle classi perchè da più peso agli errori di classificazione, in particolare nella classificazione dei FN (False Negative) cioè esempi classificati come \textit{false} ma che in realtà sono \textit{true}.
+	
+	\subsection{Threshold factor}
+	Il \textit{threshold factor} è un valore che consente la classificazione di una osservazione $x$ in \textit{true} (assumendo che la classe minoritaria sia quella con valori \textit{true}).
+	\linebreak
+	In particolare: $$p* = \frac{FP}{FP + FN} = \frac{C(1, 0)}{C(1, 0) + C(0, 1)}$$
+	Se $P(true, x) \ge p*$ allora $x$ viene classificato come \textit{true}.
+	
+	\subsubsection{Meta Learning}
+	Il \textit{meta learning} è un tipo di \textit{cost-sensitive learning} che converte un algoritmo \textit{cost-insensitive} in uno \textit{cost-sensitive}
+	
+	%\subsection{Riduzione del rumore nei dati}
+	%I dati rumorosi sono privi di significato, che vanno ad inficiare le performance dei modelli allenati su di essi, per questo è sempre meglio ridurili, la presenza di rumore nei dati può essere dovuta a molteplici fattori, per es. il mancato funzionamento dei sensori che raccolgono dati, errori di programmazione, input incomprensibi e così via.
+%	Nel nostro caso il rumore si esprime attravero istanze duplicate e presenza di outlier. \\
+	%\linebreak
+	%Per andare a rimuovere i duplicati possiamo fare ricorso ad un fltro di \texttt{weka}, in particolare: \texttt{weka.filters.unsupervised.instance.RemoveDuplicates}, passando da 88283 osservazioni a 88253. \\
+	%\linebreak
+%	Per quanto riguarda gli outliers
 	
 	
 
