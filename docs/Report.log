@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.2)  3 JUN 2023 09:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.2)  6 JUN 2023 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,115 +612,122 @@ Package shellesc Info: Restricted shell escape enabled on input line 77.
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 25.
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen261
+\ar@mcellbox=\box64
+\extrarowheight=\dimen262
+\NC@list=\toks34
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box65
+)
+\TX@col@width=\dimen263
+\TX@old@table=\dimen264
+\TX@old@col=\dimen265
+\TX@target=\dimen266
+\TX@delta=\dimen267
+\TX@cols=\count315
+\TX@ftn=\toks35
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip58
-\cftbeforetoctitleskip=\skip59
-\cftaftertoctitleskip=\skip60
-\cftbeforepartskip=\skip61
-\cftpartnumwidth=\skip62
-\cftpartindent=\skip63
-\cftbeforesecskip=\skip64
-\cftsecindent=\skip65
-\cftsecnumwidth=\skip66
-\cftbeforesubsecskip=\skip67
-\cftsubsecindent=\skip68
-\cftsubsecnumwidth=\skip69
-\cftbeforesubsubsecskip=\skip70
-\cftsubsubsecindent=\skip71
-\cftsubsubsecnumwidth=\skip72
-\cftbeforeparaskip=\skip73
-\cftparaindent=\skip74
-\cftparanumwidth=\skip75
-\cftbeforesubparaskip=\skip76
-\cftsubparaindent=\skip77
-\cftsubparanumwidth=\skip78
-\cftbeforeloftitleskip=\skip79
-\cftafterloftitleskip=\skip80
-\cftbeforefigskip=\skip81
-\cftfigindent=\skip82
-\cftfignumwidth=\skip83
-
-
-! LaTeX Error: Command \c@lofdepth already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.623   \newcounter{lofdepth}
-                             \setcounter{lofdepth}{1}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Command \c@lotdepth already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.624   \newcounter{lotdepth}
-                             \setcounter{lotdepth}{1}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-\cftbeforelottitleskip=\skip84
-\cftafterlottitleskip=\skip85
-\cftbeforetabskip=\skip86
-\cfttabindent=\skip87
-\cfttabnumwidth=\skip88
-) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+\cftparskip=\skip60
+\cftbeforetoctitleskip=\skip61
+\cftaftertoctitleskip=\skip62
+\cftbeforepartskip=\skip63
+\cftpartnumwidth=\skip64
+\cftpartindent=\skip65
+\cftbeforesecskip=\skip66
+\cftsecindent=\skip67
+\cftsecnumwidth=\skip68
+\cftbeforesubsecskip=\skip69
+\cftsubsecindent=\skip70
+\cftsubsecnumwidth=\skip71
+\cftbeforesubsubsecskip=\skip72
+\cftsubsubsecindent=\skip73
+\cftsubsubsecnumwidth=\skip74
+\cftbeforeparaskip=\skip75
+\cftparaindent=\skip76
+\cftparanumwidth=\skip77
+\cftbeforesubparaskip=\skip78
+\cftsubparaindent=\skip79
+\cftsubparanumwidth=\skip80
+\cftbeforeloftitleskip=\skip81
+\cftafterloftitleskip=\skip82
+\cftbeforefigskip=\skip83
+\cftfigindent=\skip84
+\cftfignumwidth=\skip85
+\cftbeforelottitleskip=\skip86
+\cftafterlottitleskip=\skip87
+\cftbeforetabskip=\skip88
+\cfttabindent=\skip89
+\cfttabnumwidth=\skip90
+\cftbeforesubfigskip=\skip91
+\cftsubfigindent=\skip92
+\cftsubfignumwidth=\skip93
+\cftbeforesubtabskip=\skip94
+\cftsubtabindent=\skip95
+\cftsubtabnumwidth=\skip96
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count315
-\l__pdf_internal_box=\box64
+\l__color_backend_stack_int=\count316
+\l__pdf_internal_box=\box66
 )
 (./Report.aux)
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count316
-\scratchdimen=\dimen261
-\scratchbox=\box65
-\nofMPsegments=\count317
-\nofMParguments=\count318
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count319
-\MPscratchDim=\dimen262
-\MPnumerator=\count320
-\makeMPintoPDFobject=\count321
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count317
+\scratchdimen=\dimen268
+\scratchbox=\box67
+\nofMPsegments=\count318
+\nofMParguments=\count319
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen269
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
+\everyMPtoPDFconversion=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -731,7 +738,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 39.
+Package hyperref Info: Link coloring ON on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -742,28 +749,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count322
+\c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
 
 (./Report.out) (./Report.out)
 \@outlinefile=\write4
 \openout4 = `Report.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 41.
+(Font)              <14.4> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 41.
+(Font)              <7> on input line 42.
 
 
 LaTeX Warning: No \author given.
 
-<./images//image.png, id=47, 450.68375pt x 361.35pt>
+<./images//image.png, id=67, 450.68375pt x 361.35pt>
 File: ./images//image.png Graphic file (type png)
 <use ./images//image.png>
-Package pdftex.def Info: ./images//image.png  used on input line 57.
+Package pdftex.def Info: ./images//image.png  used on input line 58.
 (pdftex.def)             Requested size: 142.26378pt x 114.06294pt.
 [1
 
@@ -780,115 +787,163 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout5 = `Report.toc'.
 
  [2]
-Overfull \hbox (3.97192pt too wide) in paragraph at lines 76--80
+Overfull \hbox (3.97192pt too wide) in paragraph at lines 77--81
 [][]\T1/cmr/m/n/12 Near-Earth Objects[][] (NEO) dataset contiene una serie di i
 nformazioni, raccolte
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
 
  []
 
 
-Overfull \hbox (6.88058pt too wide) in paragraph at lines 81--82
+Overfull \hbox (6.88058pt too wide) in paragraph at lines 82--83
 []\T1/cmr/bx/n/12 Comete\T1/cmr/m/n/12 : corpo celeste relativamente piccolo, c
 omposto da gas ghiacciati
  []
 
 
-Overfull \hbox (2.35422pt too wide) in paragraph at lines 87--88
+Overfull \hbox (2.35422pt too wide) in paragraph at lines 88--89
 \T1/cmr/m/n/12 attorno alla terra possono provocare danni, questo perchè è orma
 i ampiamente
  []
 
 [3]
-Overfull \hbox (8.84407pt too wide) in paragraph at lines 98--99
+Overfull \hbox (8.84407pt too wide) in paragraph at lines 102--103
 \T1/cmr/m/n/12 apprendimento Automatico, scritto in Java e sviluppato presso Un
 iversity
  []
 
 
-Overfull \hbox (1.0876pt too wide) in paragraph at lines 117--118
+Overfull \hbox (1.0876pt too wide) in paragraph at lines 121--122
 []\T1/cmr/m/it/12 absolute_magnitude \T1/cmr/m/n/12 [numeric]: descrizione dell
 a luminosità dell'oggetto
  []
 
 [4]
-Overfull \hbox (5.38959pt too wide) in paragraph at lines 133--134
+Overfull \hbox (5.38959pt too wide) in paragraph at lines 137--138
 \T1/cmr/m/n/12 e \T1/cmr/m/it/12 est_diameter_max\T1/cmr/m/n/12 , andando a des
 crivere la dimensione di diametro massima
  []
 
 
-Overfull \hbox (54.24855pt too wide) in paragraph at lines 133--134
+Overfull \hbox (54.24855pt too wide) in paragraph at lines 137--138
 \T1/cmr/m/n/12 che andrebbe a rappresentare la media matematica dei due valori 
 (\T1/cmr/m/it/12 est_diameter_mean\T1/cmr/m/n/12 ). 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--142
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--142
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--142
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
 
  []
 
-
-Overfull \hbox (36.55127pt too wide) in paragraph at lines 150--151
+[5]
+Overfull \hbox (36.55127pt too wide) in paragraph at lines 157--158
 \T1/cmr/m/n/12 sottoinsieme, questo si applicherebbe alla classe più numerosa, 
 mentre l'oversampling
  []
 
 
-Overfull \hbox (18.01695pt too wide) in paragraph at lines 150--151
+Overfull \hbox (18.01695pt too wide) in paragraph at lines 157--158
 \T1/cmr/m/n/12 sposta il focus sulla classe con meno occorrenze andando a crear
 e ^^Psinteticamente^^Q
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 161.
-<./images//output1.png, id=107, 425.6703pt x 312.2064pt>
+put line 168.
+<./images//output1.png, id=132, 425.6703pt x 312.2064pt>
 File: ./images//output1.png Graphic file (type png)
 <use ./images//output1.png>
-Package pdftex.def Info: ./images//output1.png  used on input line 180.
+Package pdftex.def Info: ./images//output1.png  used on input line 186.
 (pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
-<./images//output2.png, id=108, 425.6703pt x 312.2064pt>
+<./images//output2.png, id=133, 425.6703pt x 312.2064pt>
 File: ./images//output2.png Graphic file (type png)
 <use ./images//output2.png>
-Package pdftex.def Info: ./images//output2.png  used on input line 183.
+Package pdftex.def Info: ./images//output2.png  used on input line 189.
 (pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
 
-Overfull \hbox (35.66925pt too wide) in paragraph at lines 180--184
+Overfull \hbox (35.66925pt too wide) in paragraph at lines 186--190
  [][][][][][] 
  []
 
-[6] [7 <./images//output1.png> <./images//output2.png>] (./Report.aux)
+
+Overfull \hbox (26.69673pt too wide) in paragraph at lines 192--194
+\T1/cmr/m/n/12 sinteticamente dei nuovi dati per la classe minoritaria consider
+ando la distribuzione
+ []
+
+[6]
+File: ./images//output1.png Graphic file (type png)
+<use ./images//output1.png>
+Package pdftex.def Info: ./images//output1.png  used on input line 220.
+(pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
+<./images//output3.png, id=139, 425.6703pt x 312.2064pt>
+File: ./images//output3.png Graphic file (type png)
+<use ./images//output3.png>
+Package pdftex.def Info: ./images//output3.png  used on input line 223.
+(pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
+
+Overfull \hbox (35.66925pt too wide) in paragraph at lines 220--224
+ [][][][][][] 
+ []
+
+
+Overfull \hbox (14.23174pt too wide) in paragraph at lines 227--228
+\T1/cmr/m/n/12 considerare una classificazione binaria, ad ogni tipo di predizi
+one viene asseganto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+[7 <./images//output1.png> <./images//output2.png>] [8]
+Overfull \hbox (5.4353pt too wide) in paragraph at lines 247--249
+\T1/cmr/m/n/12 Il \T1/cmr/m/it/12 threshold factor \T1/cmr/m/n/12 è un valore c
+he consente la classificazione di una osservazione
+ []
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{subfigure.1
+.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.271 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{subfigure.1.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.271 \end{document}
+                     <./images//output3.png>] [10] (./Report.aux)
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 64E09AD322BEB07E079C0B0FAE9E17DC;1424.
+(rerunfilecheck)             Checksum: 43A9F52DC7CD95E08B2819BE94891E74;2551.
  ) 
 Here is how much of TeX's memory you used:
- 23495 strings out of 480171
- 446124 string characters out of 5894490
- 732143 words of memory out of 5000000
- 41012 multiletter control sequences out of 15000+600000
+ 23686 strings out of 480171
+ 449592 string characters out of 5894490
+ 739975 words of memory out of 5000000
+ 41183 multiletter control sequences out of 15000+600000
  481638 words of font info for 52 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  94i,10n,92p,609b,898s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -901,13 +956,17 @@ pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.60
 0.600pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx17
 28.600pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2
 488.600pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
-2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (7 pages, 216624 bytes).
+2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Report.pdf (10 pages, 282484 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 532 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

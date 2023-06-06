@@ -8,8 +8,13 @@
 \contentsline {subsection}{\numberline {2.2}Preparazione dati}{5}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Analisi delle input features}{5}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Analisi della target feature}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Oversampling vs Undersampling}{6}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Approccio ibrido}{6}{subsubsection.2.2.4}%
-\contentsline {section}{\numberline {3}Machine Learning}{7}{section.3}%
-\contentsline {section}{\numberline {4}Analisi esplorativa dei dati}{7}{section.4}%
-\contentsline {section}{\numberline {5}Conclusioni}{7}{section.5}%
+\contentsline {section}{\numberline {3}Resampling per lo sbilanciamento delle classi}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Oversampling vs Undersampling}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Approccio ibrido}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}SMOTE-ENN}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}ADASYN}{7}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}Cost-Sensitive learning per lo sbilanciamento delle classi}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Threshold factor}{9}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Machine Learning}{10}{section.5}%
+\contentsline {section}{\numberline {6}Analisi esplorativa dei dati}{10}{section.6}%
+\contentsline {section}{\numberline {7}Conclusioni}{10}{section.7}%
