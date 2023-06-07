@@ -250,7 +250,17 @@
 	Se $P(true, x) \ge p*$ allora $x$ viene classificato come \textit{true}.
 	
 	\subsubsection{Meta Learning}
-	Il \textit{meta learning} è un tipo di \textit{cost-sensitive learning} che converte un algoritmo \textit{cost-insensitive} in uno \textit{cost-sensitive}
+	Il \textit{meta learning} è un tipo di \textit{cost-sensitive learning} che converte un algoritmo \textit{cost-insensitive} in uno \textit{cost-sensitive} in due modi diversi:
+	
+	\begin{itemize}
+%		\item \textbf{Threshold}, usa la soglia $p*$ per la classificazione
+		\item \textbf{Sampling}, modifica della distribuzione dei dati per poi andare ad applicare un algoritmo di learning
+	\end{itemize}
+	
+	\section{Machine Learning}
+	Tenendo conto di tutte le considerazioni fatte la parte inerente all'addestramento ed alla successiva valutazione si concentrerà in particolare sulle differenze tra l'addestramento su tre instanze del dataset, in particolare con il dataset originale, il dataset su cui è eseguito l'algorimto SMOTE-ENN ed il dataset su cui è eseguito ADASYN, andando a differenziare tra cost-insensitive learning e cost-sensitive learning.
+	
+	   
 	
 	%\subsection{Riduzione del rumore nei dati}
 	%I dati rumorosi sono privi di significato, che vanno ad inficiare le performance dei modelli allenati su di essi, per questo è sempre meglio ridurili, la presenza di rumore nei dati può essere dovuta a molteplici fattori, per es. il mancato funzionamento dei sensori che raccolgono dati, errori di programmazione, input incomprensibi e così via.
@@ -263,7 +273,7 @@
 	
 
 
-	\section{Machine Learning}
+
 
 	\section{Analisi esplorativa dei dati}
 
