@@ -258,9 +258,39 @@
 	\end{itemize}
 	
 	\section{Machine Learning}
-	Tenendo conto di tutte le considerazioni fatte la parte inerente all'addestramento ed alla successiva valutazione si concentrerà in particolare sulle differenze tra l'addestramento su tre instanze del dataset, in particolare con il dataset originale, il dataset su cui è eseguito l'algorimto SMOTE-ENN ed il dataset su cui è eseguito ADASYN, andando a differenziare tra cost-insensitive learning e cost-sensitive learning.
+	Tenendo conto di tutte le considerazioni fatte, la parte inerente all'addestramento ed alla successiva valutazione si concentrerà in particolare sulle differenze tra l'addestramento su tre instanze del dataset, in particolare con il dataset originale, il dataset su cui è eseguito l'algorimto SMOTE-ENN ed il dataset su cui è eseguito ADASYN, andando a differenziare tra cost-insensitive learning e cost-sensitive learning.
 	
+	
+		\begin{figure}[hb]
+			\centering
+			\includegraphics[width=15cm]{untitled2}
+		\end{figure}
+		
+	\subsection{Modelli di learning}
+	L'addestramento avverrà principalmente con due modelli di learning:
+	
+	\begin{itemize}
+		\item Albero di decisione, in particolare il C4.5
+		\item Naive Bayes, in particolare la variante Complement Naive Bayes (particolarmente utile per dati sbilanciati)
+	\end{itemize}
 	   
+	\subsubsection{Decision Tree C4.5}
+	Modello di classificazione che prende in input una collezione di esempi di training $S$ e l'iniseme delle classi $C = \{c_1, c_2, \dots, c_k\}$, ad ogni nodo dell'albero, C4.5 sceglie l'attributo dei dati che più efficacemente suddivide $S$ insieme di campioni in sottoinsiemi in base alle classi. Il criterio di suddivisione è \textit{l'information gain} (differenza di entropia). L'attributo con il più alto guadagno di informazioni normalizzate viene scelto per prendere la decisione. \\
+	\textit{l'information gain} per l'attributo di test $t$ sarà:
+	
+	$$IG(S, t) = E(S) - \sum_i \frac{|S_i|}{|S|}E(S_i)$$ dove $$E(S) = -\sum_{i = 1, \dots, k} Count(c_i, S)\cdot\log(Count(c_i, S))$$
+	
+	Nel nostro caso abbiamo applicato allenato il modello con sei configurazioni:
+	
+	\begin{itemize}
+		\item \texttt{DecisionTreeClassifier().fit(X\_train, y\_train)}, classificatore cost-insensitive addesstrato su il dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
+		\item \texttt{DecisionTreeClassifier(class\_weight="balanced").fit(X\_train, y\_train)}, classificatore cost-sensitive addesstrato su il dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
+		
+	\end{itemize}
+	
+	N.B. L'attributo \texttt{class\_weight} è stato impostato a \texttt{"balanced"} per andare a regolare automaticamente i pesi in modo inversamente proporzionale alle classi: $$w_{true} = \frac{N_s}{2\cdot N_{true}} \quad w_{false} = \frac{N_s}{2\cdot N_{false}}$$ dove $N_s$ è la cardinalità del dataset, $2$ rappresenta il numero di classi, $N_{true}$ e $N_{false}$ sono rispettivamente il numero di occorrenze con classe \textit{true} e della classe \textit{false}.
+	
+	
 	
 	%\subsection{Riduzione del rumore nei dati}
 	%I dati rumorosi sono privi di significato, che vanno ad inficiare le performance dei modelli allenati su di essi, per questo è sempre meglio ridurili, la presenza di rumore nei dati può essere dovuta a molteplici fattori, per es. il mancato funzionamento dei sensori che raccolgono dati, errori di programmazione, input incomprensibi e così via.
@@ -270,6 +300,7 @@
 	%\linebreak
 %	Per quanto riguarda gli outliers
 	
+	\subsubsection{Naive Bayes}
 	
 
 
