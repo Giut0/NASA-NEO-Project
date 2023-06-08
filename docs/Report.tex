@@ -182,10 +182,10 @@
 	\begin{figure}[!ht]
 		\centering
 		\subfloat[Prima di SMOTE-ENN]{%
-			\includegraphics[scale=0.5]{output1.png}%
+			\includegraphics[scale=0.5]{imb_graph.png}%
 		}%
 		\subfloat[Dopo SMOTE-ENN]{%
-			\includegraphics[scale=0.5]{output2.png}%
+			\includegraphics[scale=0.5]{smoteenn_graph.png}%
 		}%
 	\end{figure}
 	\subsubsection{ADASYN}
@@ -216,10 +216,10 @@
 	\begin{figure}[!ht]
 	\centering
 	\subfloat[Prima di ADASYN]{%
-		\includegraphics[scale=0.5]{output1.png}%
+		\includegraphics[scale=0.5]{imb_graph.png}%
 	}%
 	\subfloat[Dopo ADASYN]{%
-		\includegraphics[scale=0.5]{output3.png}%
+		\includegraphics[scale=0.5]{adasyn_graph.png}%
 	}%
 \end{figure}
 	
@@ -263,7 +263,7 @@
 	
 		\begin{figure}[hb]
 			\centering
-			\includegraphics[width=15cm]{untitled2}
+			\includegraphics[width=15cm]{metodology_graph}
 		\end{figure}
 		
 	\subsection{Modelli di learning}
@@ -280,7 +280,7 @@
 	
 	$$IG(S, t) = E(S) - \sum_i \frac{|S_i|}{|S|}E(S_i)$$ dove $$E(S) = -\sum_{i = 1, \dots, k} Count(c_i, S)\cdot\log(Count(c_i, S))$$
 	
-	Nel nostro caso abbiamo applicato allenato il modello con sei configurazioni:
+	Nel nostro caso abbiamo allenato il modello con sei configurazioni:
 	
 	\begin{itemize}
 		\item \texttt{DecisionTreeClassifier().fit(X\_train, y\_train)}, classificatore cost-insensitive addesstrato su il dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
@@ -302,11 +302,15 @@
 	
 	\subsubsection{Naive Bayes}
 	
+	Il naive bayes è uno dei modelli del framework bayesiano, si basa sul teorema di Bayes:
+	$$P(h|D) = \frac{P(D|h)\cdot P(h)}{P(D)}$$
+	Più nello specifico il naive Bayes, considerando ogni instanza del dataset come una tupla di valori $<a_1, a_2, \dots, a_n>$ e l'attributo target che prende i valori da un insieme $V$, va a stimare $P(v_j)$, cioè la probabilità a priori che l'attributo target abbia valore $v_j$, con la frequenza relativa del valore $v_j$ nel dataset $$P(v_j) = \frac{\#istanze\_con\_val\_v_j}{\#istanze\_tot}$$ similmente andrà a stimare la probabilità condizionata $P(a_i|v_j)$ contando quante occorrenze classificate con $v_j$ hanno il valore $a_i$. \\
+	Andando ad assumere l'indipendenza condizionale dei valori degli attributi, avremo:
+	$$V_{NB} = \max_{v_j \in V}(P(v_j)\prod_{i = 1}^{n} P(a_i|v_j))$$
+	Quindi all'istanza $x$ verrà assegnata la classe $v_j$ che ha massimizzato il valore sopra citato. \\
+	Nel nostro caso abbiamo allenato il modello con i tre dataset, dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
 
-
-
-
-	\section{Analisi esplorativa dei dati}
+	\section{Risultati}
 
 	\section{Conclusioni}
 	
