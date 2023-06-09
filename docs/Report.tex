@@ -91,16 +91,37 @@
 		\item \textbf{False}: oggetto non pericoloso
 	\end{itemize}
 	Inoltre si vogliono comparare le prestazioni di vari modelli addestrati con tecniche diverse per evidenziare la differenza nell'addrestamento utilizzando un dataset fortemente sbilanciato.
-	In particolare si applicheranno tecniche di bilianciamento delle classi (resampling) che agiscono sui dati e tecniche di addestramento che vanno a considerare lo sbilanciamento (cost-sensitive learning) che riguardano più la controparte algoritmica. 
+	In particolare si applicheranno tecniche di bilianciamento delle classi (resampling) che agiscono sui dati e tecniche di addestramento che vanno a considerare lo sbilanciamento (cost-sensitive learning) che riguardano più la controparte algoritmica. \\
+	Avremo, quindi da sperimentare algoritmi di learning Cost-insensitive e Cost-sensitive (meta) sul dataset originale, il dataset su coi è applicato il resampling con SMOTEENN e quello su cui è appicato ADASYN.
 	
+	\subsection{Metodologia}
+	
+	Per raggiungere uno scopo si è utilizzato CRISP-DM (CRoss Industry Standard Process for Data Mining), una metodologia per attuare il KDD (Knowledge Discovery from Data).
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.3]{CRISP-DM}
+	\end{figure}
+
+	In particolare il CRISP-DM si compone di sei fasi:
+	
+	\begin{enumerate}
+		\item \textbf{Buisness understanding}, dove si studia e si comprende il dominio applicativo e gli obiettivi da raggiungere, andando a produrre un project plan.
+		\item \textbf{Data understanding}, fase nella quale si identificano metodi per l'acquisizione dei dati, problemi legati a quest'ultimi, come la qualità, gli errori, etc.., e sd avviene la fase di esplorazione preliminare del dataset.
+		\item \textbf{Data preparation}, preparazione del dataset(s) andando a determinare il sottoinsieme dei dati che più rappresenza il dataset in funzione degi obiettivi, pulendo il datasets da errori, valori mancanti, \textit{outliers} ed attributi non funzionali allo scopo (feature selection), attuare tecniche per andare a ribilanciare i dati e così via.
+		\item \textbf{Modeling}, fase in cui si selezionano le tecniche di modeling andando a scegliere gli algoritmi da provare ed eseguendoli con i dovuti parametri, per poi andare a valutarli con le opportune metriche.
+		\item \textbf{Evaluation}, fase di confronto fra il data scientist ed il buisness owner per andare a valutare i risultati ottenuti in relazione agli obiettivi di buisness.
+		\item \textbf{Deployment}, fase finale di messa in produzione del modello selezionato.
+	\end{enumerate}
+
+	Il CRISP-DM è un metodo \textit{agile}, quindi le fasi scandite precedentemente non sono da considerare rigide, da applicare una dopo l'altra, ma si può, in caso di necessità, ritornare indietro da qualsiasi fase, rendendo, quindi, il processo molto flessibile.
 	
 	\subsection{Tool utilizzati}
 	Per la sperimentazione sono stati usati diversi stumenti, quali:
 	
 		\begin{itemize}
 			\item \href{https://colab.research.google.com/}{Google Colab}, strumento  presente nella suite Google che consente di scrivere python notebook direttamente dal proprio browser, utilizzando risorse messe a disposizione da remoto. 
-			\item \href{https://www.cs.waikato.ac.nz/~ml/weka/}{Weka}, software contenente una collezione di algoritmi per data Mining e apprendimento Automatico, scritto in Java e sviluppato presso University of Waikato New Zealand
-			
+			\item \href{https://www.cs.waikato.ac.nz/~ml/weka/}{Weka}, software contenente una collezione di algoritmi per data Mining e apprendimento Automatico, scritto in Java e sviluppato presso University of Waikato New Zealand.
 		\end{itemize}
 
 
@@ -115,7 +136,7 @@
 		\item \textit{est\_diameter\_min} [numeric]: diametro minimo stimato (Km)
 		\item \textit{est\_diameter\_max} [numeric]: diametro massimo stimato (Km)
 		\item \textit{relative\_velocity} [numeric]: Velocità relativa rispetto alla terra (Km/h)
-		\item \textit{miss\_distance }[numeric]: ???
+		\item \textit{miss\_distance }[numeric]: Distanza minima tra il NEO e la Terra durante il suo passaggio più ravvicinato (Km/h)
 		\item \textit{orbiting\_body} [string]: Corpo rispetto al quale l’oggetto sta orbitando
 		\item \textit{sentry\_object} [boolean]: Copro incluso o meno in sentry (sistema di monitoraggio automatico delle collisioni)
 		\item \textit{absolute\_magnitude} [numeric]: descrizione della luminosità dell’oggetto (energia radiata dal corpo al secondo)
@@ -134,20 +155,16 @@
 		\item \textit{sentry\_object} (ha un unico valore)
 	\end{itemize}
 	
-	Un'altra considerazione si potrebbe fare sulle features \textit{est\_diameter\_min} e \textit{est\_diameter\_max}, andando a descrivere la dimensione di diametro massima e minima, si potrebbero accopare i dati delle due caratteristiche con un'unica che andrebbe a rappresentare la media matematica dei due valori (\textit{est\_diameter\_mean}).
-	
 	
 	\subsubsection{Analisi della target feature}
+	Lo scalido piò arduo da affrontare riguarda sicuramente la natura delle osservazioni inerenti alla target feature \textit{hazardous}, che presenta una distrubuzione di valori fortemente sbilanciata ($90.3\%$ per False e $9.7\%$ per True) per via della natura della osservazioni e del dominio a cui fanno riferimento.
 	
-	Il "problema" più grande del lavoro riguarda la natura delle osservazioni inerenti alla target feature \textit{hazardous}, che presenta una distrubuzione di valori fortemente sbilanciata ($90.3\%$ per false e $9.7\%$ per True)
-	\\
-	\linebreak
-	\linebreak
 	\begin{center}
-	\begin{tikzpicture}[scale=0.9]
-		\pie[color={myblue, mygrey}, text=pin]{90.3/false 82.0k, 9.7/true 8.8k}
-	\end{tikzpicture}
-\end{center}
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[scale=0.73]{output}
+		\end{figure}
+	\end{center}
 
 	\section{Resampling per lo sbilanciamento delle classi}
 	Il resampling è un tecnica (data focsed) usata per bilanciare le osservazioni di ogni classe andando a generarne di nuove o eliminandole per risolvere il problema dello sblianciamento.
