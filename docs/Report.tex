@@ -1,11 +1,14 @@
 \documentclass[italian,12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut} %
 \usepackage{babel}
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{colortbl}
 \usepackage{pgf-pie}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -162,7 +165,7 @@
 	\begin{center}
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.73]{output}
+			\includegraphics[scale=0.73]{imbcalss}
 		\end{figure}
 	\end{center}
 
@@ -278,7 +281,7 @@
 	Tenendo conto di tutte le considerazioni fatte, la parte inerente all'addestramento ed alla successiva valutazione si concentrerà in particolare sulle differenze tra l'addestramento su tre instanze del dataset, in particolare con il dataset originale, il dataset su cui è eseguito l'algorimto SMOTE-ENN ed il dataset su cui è eseguito ADASYN, andando a differenziare tra cost-insensitive learning e cost-sensitive learning.
 	
 	
-		\begin{figure}[hb]
+		\begin{figure}[!h]
 			\centering
 			\includegraphics[width=15cm]{metodology_graph}
 		\end{figure}
@@ -287,11 +290,11 @@
 	L'addestramento avverrà principalmente con due modelli di learning:
 	
 	\begin{itemize}
-		\item Albero di decisione, in particolare il C4.5
+		\item Albero di calssificazione, in particolare il C4.5
 		\item Naive Bayes, in particolare la variante Complement Naive Bayes (particolarmente utile per dati sbilanciati)
 	\end{itemize}
 	   
-	\subsubsection{Decision Tree C4.5}
+	\subsubsection{Classification Tree C4.5}
 	Modello di classificazione che prende in input una collezione di esempi di training $S$ e l'iniseme delle classi $C = \{c_1, c_2, \dots, c_k\}$, ad ogni nodo dell'albero, C4.5 sceglie l'attributo dei dati che più efficacemente suddivide $S$ insieme di campioni in sottoinsiemi in base alle classi. Il criterio di suddivisione è \textit{l'information gain} (differenza di entropia). L'attributo con il più alto guadagno di informazioni normalizzate viene scelto per prendere la decisione. \\
 	\textit{l'information gain} per l'attributo di test $t$ sarà:
 	
@@ -305,7 +308,7 @@
 		
 	\end{itemize}
 	
-	N.B. L'attributo \texttt{class\_weight} è stato impostato a \texttt{"balanced"} per andare a regolare automaticamente i pesi in modo inversamente proporzionale alle classi: $$w_{true} = \frac{N_s}{2\cdot N_{true}} \quad w_{false} = \frac{N_s}{2\cdot N_{false}}$$ dove $N_s$ è la cardinalità del dataset, $2$ rappresenta il numero di classi, $N_{true}$ e $N_{false}$ sono rispettivamente il numero di occorrenze con classe \textit{true} e della classe \textit{false}.
+	N.B. L'attributo \texttt{class\_weight} è stato impostato a \texttt{"balanced"} per andare a regolare automaticamente i pesi in modo inversamente proporzionale alle classi: $$w_{true} = \frac{N_s}{2\cdot N_{true}} \quad w_{false} = \frac{N_s}{2\cdot N_{false}} $$ dove $N_s$ è la cardinalità del dataset, $2$ rappresenta il numero di classi, $N_{true}$ e $N_{false}$ sono rispettivamente il numero di occorrenze con classe \textit{true} e della classe \textit{false}.
 	
 	
 	
@@ -326,9 +329,236 @@
 	$$V_{NB} = \max_{v_j \in V}(P(v_j)\prod_{i = 1}^{n} P(a_i|v_j))$$
 	Quindi all'istanza $x$ verrà assegnata la classe $v_j$ che ha massimizzato il valore sopra citato. \\
 	Nel nostro caso abbiamo allenato il modello con i tre dataset, dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
+	
+	\section{Valutazione dei modelli}
+	Per andare a valutare i modelli prodotto dopo l'addestramento si è usata la k-Fold-Cross-Validation, che prevede la riprtizione del dataset $D$ in k sottoinsiemi (folds), $D_1, D_2, \dots, D_k$, prevede $k$ iterazioni ed all'$i$-esima iterazione il sottoinsieme $D_i$ sarà usato come dataset di test, metre l'unione degli altri sarà usata per allenare il modello.
+	
+	\subsection{Metriche scelte}
+	Ai fini della valutazione si hanno a disposizione moltissime metriche adatte per moltissime situazioni, le più comuni sono
+	
+	$$Precision = \frac{TP}{TP+FP} \quad Recall = \frac{TP}{TP+FN}$$
+	
+	ma nel nostro caso, avendo un dataset fortemente sbilanciato, non bastano, per questo ci si concentrerà principalmente su:
+	
+	\begin{itemize}
+		\item $f\beta-score$,  combinazione delle metriche classiche di $precision$ e $recall$ bilanciate da un parametro $\beta$ nella media armonica.
+		$$f\beta-score = \frac{(1+ \beta^2) \cdot Precision \cdot Recall}{\beta^2 \cdot Precision + Recall}$$
+		\item $ROC Area$, area sotto la curva che rappresenta la relazione tra il tasso di veri positivi (True Positive Rate, TPR) e il tasso di falsi positivi (False Positive Rate, FPR) al variare della soglia di classificazione.
+			$$TPR = \frac{TP}{TP+FN} \quad FPR = \frac{FP}{FP+TN}$$
+		la $ROC Area$ è particolarmente utile per valutare modelli addestrati su dataset sbilanciati perché non è influenzata dalla distribuzione delle classi nel dataset, infatti misura la capacità del modello di classificare correttamente gli esempi positivi rispetto a quelli negativi, indipendentemente dal numero di esempi in ciascuna classe.
+	\end{itemize}
 
 	\section{Risultati}
+	
+	In questa sezione verranno riportati tutte le metriche discusse per ogni modello, separandolo per tipo di dataset e per tipo di algoritmo.\\
+	Matrice di costo usata, con pesi calcolati dalla formula precedente:
+	
+		\begin{center}
+			 \begin{blockarray}{*{2}{c} l}
+				\begin{block}{*{2}{>{$\footnotesize}c<{$}} l}
+				Actual\_negative & Actual\_positive & \\
+				\end{block}
+				\begin{block}{[*{2}{c}]>{$\footnotesize}l<{$}}
+				0 & 0.55 & Predict\_negative \\
+				5.13 & 0& Predict\_negative \\
+				\end{block}
+			\end{blockarray}		
+		\end{center}
+	
 
+	
+	\subsection{Classification Tree C4.5}
+	
+	\subsubsection{Cost-insensitive learning}
+
+	
+	\begin{center}
+	
+	   \begin{table}[h]
+		\footnotesize
+		\begin{tabular}{|p{2cm}|c|}
+			\hline
+			\multicolumn{2}{|c|}{Dataset originale}\\ \hline
+				Accuracy & 0.889 \\ \hline
+				Presicion & 0.441 \\ \hline
+				Recall & 0.448 \\ \hline
+				F-measure macro & 0.692 \\ \hline
+				ROC Area & 0.693 \\ \hline
+		\end{tabular}
+		\hfill
+		\begin{tabular}{|p{2cm}|c|}
+			\hline
+			\multicolumn{2}{|c|}{SMOTEENN}\\ \hline
+				Accuracy & 0.927 \\ \hline
+				Presicion & 0.922 \\ \hline
+				Recall & 0.925 \\ \hline
+				F-measure macro & 0.927 \\ \hline
+				ROC Area & 0.927 \\ \hline  
+		\end{tabular}
+		\hfill
+		\begin{tabular}{|p{2cm}|r|} \hline
+			\multicolumn{2}{|c|}{ADASYN}\\ \hline
+				Accuracy & 0.938 \\ \hline
+				Presicion & 0.937 \\ \hline
+				Recall & 0.941 \\ \hline
+				F-measure macro & 0.938 \\ \hline
+				ROC Area & 0.938 \\ \hline  
+		\end{tabular}
+	\end{table}
+	
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.73]{DecTree}
+		\end{figure}
+	
+	
+	\end{center}
+	
+	Andando a valutere i risultati ottenuti possiamo notare che in tutti e tre i casi il valore dell'accuracy è molto alta, ma questo non basta, perchè tiene conto della distribuzione delle classi, mentre le metriche di principale interesse, nel nostro caso, la $f\beta-score$ e $ROC Area$ non dipendendo dalla distribuzione delle classi sono molto più significative, infatti nel caso del dataset originale sono abbastanze basse, sui 0.69, mentre con i dataset ribilanciati sono molto più alte, quindi possimao riscontrare più o meno lo stesso miglioramento andando a ribilanciare le classi con i due algoritmi. \\
+	\linebreak
+	\linebreak
+	
+	\subsubsection{Cost-sensitive learning}
+	
+		\begin{center}
+		
+		\begin{table}[h]
+			\footnotesize
+			\begin{tabular}{|p{2cm}|c|}
+				\hline
+				\multicolumn{2}{|c|}{Dataset originale}\\ \hline
+				Accuracy & 0.891 \\ \hline
+				Presicion & 0.446 \\ \hline
+				Recall & 0.428 \\ \hline
+				F-measure macro & 0.686 \\ \hline
+				ROC Area & 0.685 \\ \hline  
+			\end{tabular}
+			\hfill
+			\begin{tabular}{|p{2cm}|c|}
+				\hline
+				\multicolumn{2}{|c|}{SMOTEENN}\\ \hline
+				Accuracy & 0.928 \\ \hline
+				Presicion & 0.923 \\ \hline
+				Recall & 0.928 \\ \hline
+				F-measure macro & 0.928 \\ \hline
+				ROC Area & 0.928 \\ \hline  
+			\end{tabular}
+			\hfill
+			\begin{tabular}{|p{2cm}|r|} \hline
+				\multicolumn{2}{|c|}{ADASYN}\\ \hline
+				Accuracy & 0.937 \\ \hline
+				Presicion & 0.937 \\ \hline
+				Recall & 0.940 \\ \hline
+				F-measure macro & 0.937 \\ \hline
+				ROC Area & 0.937 \\ \hline  
+			\end{tabular}
+		\end{table}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.73]{DecTreeCostSens}
+		\end{figure}
+	\end{center}
+	
+	Anche per il Cost-sensitive learning con la matrice di costo definita precedentemente i valori non si discostano tanto da quelle a cui non è applicato nessun tipo di costo.
+	
+	\subsubsection{Considerazioni}
+	Si nota quindi un sostanziale miglioramento in tutti e due i casi andando a riequilibrare le classi, di conseguenza, Il pre-processing risulta essere, una fase estremamente importante che può
+	influenzare, positivamente o negativamente, le prestazioni del modello di apprendimento.
+	
+	\subsection{Naive Bayes}
+	
+	\subsubsection{Cost-insensitive learning} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	\begin{center}
+		
+		\begin{table}[h]
+			\footnotesize
+			\begin{tabular}{|p{2cm}|c|}
+				\hline
+				\multicolumn{2}{|c|}{Dataset originale}\\ \hline
+				Accuracy & 0.897 \\ \hline
+				Presicion & 0.310 \\ \hline
+				Recall & 0.034 \\ \hline
+				F-measure macro & 0.042 \\ \hline
+				ROC Area & 0.513 \\ \hline  
+			\end{tabular}
+			\hfill
+			\begin{tabular}{|p{2cm}|c|}
+				\hline
+				\multicolumn{2}{|c|}{SMOTEENN}\\ \hline
+				Accuracy & 0.694 \\ \hline
+				Presicion & 0.707 \\ \hline
+				Recall & 0.613 \\ \hline
+				F-measure macro & 0.690 \\ \hline
+				ROC Area & 0.691 \\ \hline  
+			\end{tabular}
+			\hfill
+			\begin{tabular}{|p{2cm}|r|} \hline
+				\multicolumn{2}{|c|}{ADASYN}\\ \hline
+				Accuracy & 0.553 \\ \hline
+				Presicion & 0.563 \\ \hline
+				Recall & 0.556 \\ \hline
+				F-measure macro & 0.552 \\ \hline
+				ROC Area & 0.552 \\ \hline  
+			\end{tabular}
+		\end{table} 
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.73]{Bayes}
+		\end{figure}
+	\end{center}
+	
+	In questo caso applicando il Naive Bayes possiamo riscorntare un'enomre differenza tra le metriche del modello addestrato sul dataset originale e quelle dei modelli addestrati sui dataset ribilanciati, da notare che il modello addestrato sull dataset al quale è applicato lo SMOTEENN è risultato migliore ma leggermente al di sotto dei risultati ottenuti con il modello basato sull''albero di classificazione. \\
+	\linebreak
+	\linebreak
+	
+	\subsubsection{Cost-sensitive learning}
+	\begin{center}
+		\quad
+		\begin{table}[h]
+			\footnotesize
+			\begin{tabular}{|p{2cm}|c|}
+				\hline
+				\multicolumn{2}{|c|}{Dataset originale}\\ \hline
+				Accuracy & 0.782 \\ \hline
+				Presicion & 0.916 \\ \hline
+				Recall & 0.782 \\ \hline
+				F-measure macro & 0.404 \\ \hline
+				ROC Area & 0.866 \\ \hline  
+				\end{tabular}
+				\hfill
+				\begin{tabular}{|p{2cm}|c|}
+				\hline
+				\multicolumn{2}{|c|}{SMOTEENN}\\ \hline
+				Accuracy & 0.859 \\ \hline
+				Presicion & 0.891 \\ \hline
+				Recall & 0.859 \\ \hline
+				F-measure macro & 0.858 \\ \hline
+				ROC Area & 0.911 \\ \hline  
+				\end{tabular}
+					\hfill
+			\begin{tabular}{|p{2cm}|r|} \hline
+				\multicolumn{2}{|c|}{ADASYN}\\ \hline
+				Accuracy & 0.829 \\ \hline
+				Presicion & 0.868 \\ \hline
+				Recall & 0.829 \\ \hline
+				F-measure macro & 0.824 \\ \hline
+				ROC Area & 0.877 \\ \hline  
+			\end{tabular}
+		\end{table}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.73]{BayesCostSens}
+		\end{figure}
+	\end{center}
+	
+	In questo caso applicando il cost sensitive learning al Naive Bayes possiamo notare un miglioramento nelle prestazioni del modello addestrato sul dataset originale, mentre i risultati per gli modelli sono leggermente superiori ai precedenti.
+	
+	\subsubsection{Considerazioni}
+	In questo caso il miglioramento si nota, si intervenendo sulla distribuzione delle classi, ma anche applicando il cost-sensitive learning.
+	
+	
 	\section{Conclusioni}
 	
 
