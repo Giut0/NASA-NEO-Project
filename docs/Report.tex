@@ -78,28 +78,28 @@
 	\subsection{Contesto}
 
 	\href{https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects/}{Near-Earth Objects} (NEO) dataset contiene una serie di informazioni, raccolte dalla NASA, che caratterizzano degli oggetti rilevati vicino alla terra, molti di questi oggetti sono a migliaia di chilometri dalla superficie terrestre, ma su scala astronomica queste distanze sono molto piccole e possono influenzare fenomeni naturali, quali per esempio cambiamenti nella marea, eventi sismici, cambiamento atmosferico, variazioni magnetiche e così via. \\
-	È importante sottolineare che la maggior parte degli corpi celesti che passano vicini alla Terra sono di piccole dimensioni e passano ad una distanza sicura, solitamente non hanno un impatto significativo sui fenomeni naturali, ma quelli di dimensioni maggiori o che si avvicinano molto possono avere degli effetti. \\
+	È importante sottolineare che la maggior parte dei corpi celesti che passano vicini alla Terra sono di piccole dimensioni e passano ad una distanza sicura, solitamente non hanno un impatto significativo sui fenomeni naturali, ma quelli di dimensioni maggiori o che si avvicinano molto possono avere degli effetti. \\
 	\linebreak
 	La natura dei Near-Earth Objects (NEO) si può dividere in:
 	\begin{itemize}
-		\item \textbf{Comete}: corpo celeste relativamente piccolo, composto da gas ghiacciati frammenti di rocce e metalli
-		\item \textbf{Asteroidi}: corpi minori di un sistema planetario originati dallo stesso processo di formazione dei pianeti ma le cui fasi di accrescimento si sono interrotte più o meno presto, oppure formati attraverso la collisione tra altri corpi celesti, sono composti principalmente da silicati di nichel, ferro e magnesio
+		\item \textbf{Comete}: corpo celeste relativamente piccolo, composto da gas ghiacciati frammenti di rocce e metalli.
+		\item \textbf{Asteroidi}: corpi minori di un sistema planetario originati dallo stesso processo di formazione dei pianeti ma le cui fasi di accrescimento si sono interrotte più o meno presto, oppure formati attraverso la collisione tra altri corpi celesti, sono composti principalmente da silicati di nichel, ferro e magnesio.
 	\end{itemize}
 
 	
 	\subsection{Definizione obiettivo principale}
 	L'obiettivo principale del progetto è quello di addestrare un modello per andare a predirre, in base ad alcuni parametri, quali corpi celesti rilevati attorno alla terra possono provocare danni, questo perchè è ormai ampiamente accettato dalla comunità scientifica che le collisioni di asteroidi con la Terra avvenute in passato hanno avuto un ruolo significativo nel disegnare la storia geologica e biologica del pianeta, per questo risulta interessante effettuare un task di classificazione binaria che coinvolge la feature \textit{hazardous} con classi:
 	\begin{itemize}
-		\item \textbf{True}: oggetto potenzialmente pericoloso
-		\item \textbf{False}: oggetto non pericoloso
+		\item \textbf{True}: oggetto potenzialmente pericoloso.
+		\item \textbf{False}: oggetto non pericoloso.
 	\end{itemize}
 	Inoltre si vogliono comparare le prestazioni di vari modelli addestrati con tecniche diverse per evidenziare la differenza nell'addrestamento utilizzando un dataset fortemente sbilanciato.
-	In particolare si applicheranno tecniche di bilianciamento delle classi (resampling) che agiscono sui dati e tecniche di addestramento che vanno a considerare lo sbilanciamento (cost-sensitive learning) che riguardano più la controparte algoritmica. \\
-	Avremo, quindi da sperimentare algoritmi di learning Cost-insensitive e Cost-sensitive (meta) sul dataset originale, il dataset su coi è applicato il resampling con SMOTEENN e quello su cui è appicato ADASYN.
+	In particolare si applicheranno tecniche di bilanciamento delle classi (\textit{resampling}) che agiscono sui dati e tecniche di addestramento che vanno a considerare lo sbilanciamento (\textit{cost-sensitive learning}) che riguardano più la controparte algoritmica. \\
+	Avremo, quindi da sperimentare algoritmi di learning Cost-insensitive e Cost-sensitive (meta) sul dataset originale, il dataset sul quale è applicato il resampling con \textit{SMOTEENN} e quello sul quale è applicato \textit{ADASYN}.
 	
 	\subsection{Metodologia}
 	
-	Per raggiungere uno scopo si è utilizzato CRISP-DM (CRoss Industry Standard Process for Data Mining), una metodologia per attuare il KDD (Knowledge Discovery from Data).
+	Per raggiungere lo scopo si è utilizzato il CRISP-DM (CRoss Industry Standard Process for Data Mining), una metodologia per attuare il KDD (Knowledge Discovery from Data).
 	
 	\begin{figure}[h]
 		\centering
@@ -110,8 +110,8 @@
 	
 	\begin{enumerate}
 		\item \textbf{Buisness understanding}, dove si studia e si comprende il dominio applicativo e gli obiettivi da raggiungere, andando a produrre un project plan.
-		\item \textbf{Data understanding}, fase nella quale si identificano metodi per l'acquisizione dei dati, problemi legati a quest'ultimi, come la qualità, gli errori, etc.., e sd avviene la fase di esplorazione preliminare del dataset.
-		\item \textbf{Data preparation}, preparazione del dataset(s) andando a determinare il sottoinsieme dei dati che più rappresenza il dataset in funzione degi obiettivi, pulendo il datasets da errori, valori mancanti, \textit{outliers} ed attributi non funzionali allo scopo (feature selection), attuare tecniche per andare a ribilanciare i dati e così via.
+		\item \textbf{Data understanding}, fase nella quale si identificano metodi per l'acquisizione dei dati, problemi legati a quest'ultimi, come la qualità, gli errori, etc.., quì avviene la fase di esplorazione preliminare del dataset.
+		\item \textbf{Data preparation}, preparazione del dataset(s) andando a determinare il sottoinsieme dei dati che più rappresenta il dataset in funzione degi obiettivi, pulendo il dataset da errori, valori mancanti, \textit{outliers} ed attributi non funzionali allo scopo (feature selection), attuare tecniche per andare a ribilanciare i dati e così via.
 		\item \textbf{Modeling}, fase in cui si selezionano le tecniche di modeling andando a scegliere gli algoritmi da provare ed eseguendoli con i dovuti parametri, per poi andare a valutarli con le opportune metriche.
 		\item \textbf{Evaluation}, fase di confronto fra il data scientist ed il buisness owner per andare a valutare i risultati ottenuti in relazione agli obiettivi di buisness.
 		\item \textbf{Deployment}, fase finale di messa in produzione del modello selezionato.
@@ -125,6 +125,7 @@
 		\begin{itemize}
 			\item \href{https://colab.research.google.com/}{Google Colab}, strumento  presente nella suite Google che consente di scrivere python notebook direttamente dal proprio browser, utilizzando risorse messe a disposizione da remoto. 
 			\item \href{https://www.cs.waikato.ac.nz/~ml/weka/}{Weka}, software contenente una collezione di algoritmi per data Mining e apprendimento Automatico, scritto in Java e sviluppato presso University of Waikato New Zealand.
+			\item \href{https://code.visualstudio.com/}{Visual Studio Code}, editor di codice.
 		\end{itemize}
 
 
@@ -134,16 +135,16 @@
 	Il dataset inizialmente si compone di 90836 osservazioni per dieci features che vanno a descrivere una serie di caratteristiche dei corpi celesti registrati, in particolare abbiamo:
 	
 	\begin{enumerate}
-		\item \textit{id} [numeric]: identificatore univoco per ogno oggetto
-		\item \textit{name} [string]: nominativo dato dalla NASA
-		\item \textit{est\_diameter\_min} [numeric]: diametro minimo stimato (Km)
-		\item \textit{est\_diameter\_max} [numeric]: diametro massimo stimato (Km)
-		\item \textit{relative\_velocity} [numeric]: Velocità relativa rispetto alla terra (Km/h)
-		\item \textit{miss\_distance }[numeric]: Distanza minima tra il NEO e la Terra durante il suo passaggio più ravvicinato (Km/h)
-		\item \textit{orbiting\_body} [string]: Corpo rispetto al quale l’oggetto sta orbitando
-		\item \textit{sentry\_object} [boolean]: Copro incluso o meno in sentry (sistema di monitoraggio automatico delle collisioni)
-		\item \textit{absolute\_magnitude} [numeric]: descrizione della luminosità dell’oggetto (energia radiata dal corpo al secondo)
-		\item \textit{hazardous} [boolean]: Indica se il corpo è pericoloso o meno
+		\item \textit{id} [numeric]: identificatore univoco per ogni oggetto.
+		\item \textit{name} [string]: nominativo dato dalla NASA.
+		\item \textit{est\_diameter\_min} [numeric]: diametro minimo stimato (Km).
+		\item \textit{est\_diameter\_max} [numeric]: diametro massimo stimato (Km).
+		\item \textit{relative\_velocity} [numeric]: velocità relativa rispetto alla terra (Km/h).
+		\item \textit{miss\_distance }[numeric]: distanza minima tra il NEO e la Terra durante il suo passaggio più ravvicinato (Km/h).
+		\item \textit{orbiting\_body} [string]: corpo rispetto al quale l’oggetto sta orbitando.
+		\item \textit{sentry\_object} [boolean]: copro incluso o meno in sentry (sistema di monitoraggio automatico delle collisioni).
+		\item \textit{absolute\_magnitude} [numeric]: descrizione della luminosità dell’oggetto (energia radiata dal corpo al secondo).
+		\item \textit{hazardous} [boolean]: indica se il corpo è pericoloso o meno.
 	\end{enumerate}
 	
 	\subsection{Preparazione dati}
@@ -152,10 +153,10 @@
 	Andando a considerare direttamente il dataset come ci vine fornito ci sono una serie di problematiche legate ad alcune features, alcune di queste sono inutili per lo scopo di addestramento, quali: 
 	
 	\begin{itemize}
-		\item \textit{id} (nessuna correlazione con la feature su cui fare predizione),
-		\item \textit{name} (nessuna correlazione con la feature su cui fare predizione), 
-		\item \textit{orbiting\_body} (ha un unico valore)
-		\item \textit{sentry\_object} (ha un unico valore)
+		\item \textit{id} (nessuna correlazione con la feature su cui fare predizione).
+		\item \textit{name} (nessuna correlazione con la feature su cui fare predizione).
+		\item \textit{orbiting\_body} (ha un unico valore).
+		\item \textit{sentry\_object} (ha un unico valore).
 	\end{itemize}
 	
 	
@@ -170,7 +171,7 @@
 	\end{center}
 
 	\section{Resampling per lo sbilanciamento delle classi}
-	Il resampling è un tecnica (data focsed) usata per bilanciare le osservazioni di ogni classe andando a generarne di nuove o eliminandole per risolvere il problema dello sblianciamento.
+	Il resampling è un tecnica (data driven) usata per bilanciare le osservazioni di ogni classe andando a generarne di nuove o eliminandole per risolvere il problema dello sblianciamento.
 	
 	\subsection{Oversampling vs Undersampling}
 
@@ -182,7 +183,7 @@
 	\subsubsection{SMOTE-ENN}
 	L’algoritmo SMOTE-ENN [Batista et al 2004] combina l’abilità di SMOTE (Synthetic Minority Oversampling)  di generare istanze sintetiche per la classe minoritaria, con quella di ENN (Edited Nearest Neighbor) [Wilson 1972] di eliminare da entrambe le classi alcune osservazioni. \\
 	\linebreak
-	L'algoritmo, come dice il nome, è basato su SMOTE, tecnica usata per la creazione di istanze sintetiche della classe minoritaria, andando a aggiungere nuove istanze con valori mediati tra i $k$ vicini di una osservazione della classe, prorpio per questo, teoricamente, nella nostra situazione non dovrebbe performare troppo bene, avendo le istanze della classe minoritaria molto vicine a quella della classe maggioritaria, creando così istanze sintetiche con valori mediati tra classi diverse.
+	L'algoritmo, come dice il nome, è basato su SMOTE, tecnica usata per la creazione di istanze sintetiche della classe minoritaria, andando ad aggiungere nuove istanze con valori mediati tra i $k$ vicini di una osservazione della classe, proprio per questo, teoricamente, nella nostra situazione non dovrebbe performare troppo bene, avendo le istanze della classe minoritaria molto vicine a quella della classe maggioritaria, creando così istanze sintetiche con valori mediati tra classi diverse.
 	
 	\begin{algorithm}
 		\caption{SMOTE-ENN}
@@ -209,7 +210,7 @@
 		}%
 	\end{figure}
 	\subsubsection{ADASYN}
-	L'algoritmo ADASYN (Adaptive Synthetic) si basa sull'idea di generare sinteticamente dei nuovi dati per la classe minoritaria considerando la distribuzione delle osservazioni della sudetta classe. Vengono geneari più dati a partire dalle osservazioni, della classe minoritaria, che sono più dififcili da imparare. \\
+	L'algoritmo ADASYN (Adaptive Synthetic) si basa sull'idea di generare sinteticamente dei nuovi dati per la classe minoritaria considerando la distribuzione delle osservazioni della sudetta classe. Vengono generati più dati a partire dalle osservazioni, della classe minoritaria, che sono più difficili da imparare. \\
 	La chiave di ADASYN è l'uso della distribuzione dei pesi $\hat{r_i}$ come criterio per decidere quante osservazioni sintetiche creare per ogni esempio della classe minoritaria.
 	
 		\begin{algorithm}
@@ -244,7 +245,7 @@
 \end{figure}
 	
 	\section{Cost-Sensitive learning per lo sbilanciamento delle classi}
-	Il \textit{cost-sensitive learning} è un task di data mining che tiene in considerazione il costo di una classificazione sbagliata (\textit{misclassification cost}), andnado a considerare una classificazione binaria, ad ogni tipo di predizione viene asseganto un costo, formando una \textit{cost matrix}: \\
+	Il \textit{cost-sensitive learning} è un task di data mining che tiene in considerazione il costo di una classificazione sbagliata (\textit{misclassification cost}), andando a considerare una classificazione binaria, ad ogni tipo di predizione viene asseganto un costo, formando una \textit{cost matrix}: \\
 	\begin{center}
 		\begin{tabularx}{0.8\textwidth} { 
 				| >{\centering\arraybackslash}X 
@@ -264,16 +265,16 @@
 	Il cost-sensitive learning è utile in caso di sbilanciamento delle classi perchè da più peso agli errori di classificazione, in particolare nella classificazione dei FN (False Negative) cioè esempi classificati come \textit{false} ma che in realtà sono \textit{true}.
 	
 	\subsection{Threshold factor}
-	Il \textit{threshold factor} è un valore che consente la classificazione di una osservazione $x$ in \textit{true} (assumendo che la classe minoritaria sia quella con valori \textit{true}).
+	Il \textit{threshold factor} è un valore soglia che consente la classificazione di una osservazione $x$ in \textit{true} (assumendo che la classe minoritaria sia quella con valori \textit{true}).
 	\linebreak
 	In particolare: $$p* = \frac{FP}{FP + FN} = \frac{C(1, 0)}{C(1, 0) + C(0, 1)}$$
 	Se $P(true, x) \ge p*$ allora $x$ viene classificato come \textit{true}.
 	
-	\subsubsection{Meta Learning}
+	\subsection{Meta Learning}
 	Il \textit{meta learning} è un tipo di \textit{cost-sensitive learning} che converte un algoritmo \textit{cost-insensitive} in uno \textit{cost-sensitive} in due modi diversi:
 	
 	\begin{itemize}
-%		\item \textbf{Threshold}, usa la soglia $p*$ per la classificazione
+		\item \textbf{Threshold}, usa la soglia $p*$ per la classificazione
 		\item \textbf{Sampling}, modifica della distribuzione dei dati per poi andare ad applicare un algoritmo di learning
 	\end{itemize}
 	
@@ -291,7 +292,7 @@
 	
 	\begin{itemize}
 		\item Albero di calssificazione, in particolare il C4.5
-		\item Naive Bayes, in particolare la variante Complement Naive Bayes (particolarmente utile per dati sbilanciati)
+		\item Naive Bayes
 	\end{itemize}
 	   
 	\subsubsection{Classification Tree C4.5}
@@ -308,7 +309,7 @@
 		
 	\end{itemize}
 	
-	N.B. L'attributo \texttt{class\_weight} è stato impostato a \texttt{"balanced"} per andare a regolare automaticamente i pesi in modo inversamente proporzionale alle classi: $$w_{true} = \frac{N_s}{2\cdot N_{true}} \quad w_{false} = \frac{N_s}{2\cdot N_{false}} $$ dove $N_s$ è la cardinalità del dataset, $2$ rappresenta il numero di classi, $N_{true}$ e $N_{false}$ sono rispettivamente il numero di occorrenze con classe \textit{true} e della classe \textit{false}.
+	N.B. L'attributo \texttt{class\_weight} è stato impostato a \texttt{"balanced"} per andare a regolare automaticamente i pesi in modo inversamente proporzionale alle classi: $$w_{true} = \frac{N_s}{2\cdot N_{true}} \quad w_{false} = \frac{N_s}{2\cdot N_{false}} $$ dove $N_s$ è la cardinalità del dataset, $2$ rappresenta il numero di classi, $N_{true}$ e $N_{false}$ sono rispettivamente il numero di occorrenze con classe \textit{true} e con classe \textit{false}.
 	
 	
 	
@@ -331,7 +332,7 @@
 	Nel nostro caso abbiamo allenato il modello con i tre dataset, dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
 	
 	\section{Valutazione dei modelli}
-	Per andare a valutare i modelli prodotto dopo l'addestramento si è usata la k-Fold-Cross-Validation, che prevede la riprtizione del dataset $D$ in k sottoinsiemi (folds), $D_1, D_2, \dots, D_k$, prevede $k$ iterazioni ed all'$i$-esima iterazione il sottoinsieme $D_i$ sarà usato come dataset di test, metre l'unione degli altri sarà usata per allenare il modello.
+	Per andare a valutare i modelli prodotti dopo l'addestramento si è usata la k-Fold-Cross-Validation, che esegue la riprtizione del dataset $D$ in k sottoinsiemi (folds), $D_1, D_2, \dots, D_k$ prevede $k$ iterazioni ed all'$i$-esima iterazione il sottoinsieme $D_i$ sarà usato come dataset di test, metre l'unione degli altri sarà usata per allenare il modello.
 	
 	\subsection{Metriche scelte}
 	Ai fini della valutazione si hanno a disposizione moltissime metriche adatte per moltissime situazioni, le più comuni sono
@@ -350,7 +351,7 @@
 
 	\section{Risultati}
 	
-	In questa sezione verranno riportati tutte le metriche discusse per ogni modello, separandolo per tipo di dataset e per tipo di algoritmo.\\
+	In questa sezione verranno riportati tutte le metriche discusse per ogni modello, separando per tipo di dataset e per tipo di algoritmo.\\
 	Matrice di costo usata, con pesi calcolati dalla formula precedente:
 	
 		\begin{center}
@@ -414,7 +415,7 @@
 	
 	\end{center}
 	
-	Andando a valutere i risultati ottenuti possiamo notare che in tutti e tre i casi il valore dell'accuracy è molto alta, ma questo non basta, perchè tiene conto della distribuzione delle classi, mentre le metriche di principale interesse, nel nostro caso, la $f\beta-score$ e $ROC Area$ non dipendendo dalla distribuzione delle classi sono molto più significative, infatti nel caso del dataset originale sono abbastanze basse, sui 0.69, mentre con i dataset ribilanciati sono molto più alte, quindi possimao riscontrare più o meno lo stesso miglioramento andando a ribilanciare le classi con i due algoritmi. \\
+	Andando a valutere i risultati ottenuti possiamo notare che in tutti e tre i casi il valore dell'accuracy è molto alta, ma questo non basta, perchè tiene conto della distribuzione delle classi, mentre le metriche di principale interesse, nel nostro caso, la $f\beta-score$ e $ROC Area$ non dipendendo dalla distribuzione delle classi sono molto più significative, infatti nel caso del dataset originale sono appena sufficienti, sui 0.69, mentre con i dataset ribilanciati sono molto più alte, quindi possimao riscontrare più o meno lo stesso miglioramento andando a ribilanciare le classi con i due algoritmi. \\
 	\linebreak
 	\linebreak
 	
@@ -509,7 +510,7 @@
 		\end{figure}
 	\end{center}
 	
-	In questo caso applicando il Naive Bayes possiamo riscorntare un'enomre differenza tra le metriche del modello addestrato sul dataset originale e quelle dei modelli addestrati sui dataset ribilanciati, da notare che il modello addestrato sull dataset al quale è applicato lo SMOTEENN è risultato migliore ma leggermente al di sotto dei risultati ottenuti con il modello basato sull''albero di classificazione. \\
+	In questo caso applicando con il Naive Bayes possiamo riscontrare un'enorme differenza tra le metriche del modello addestrato sul dataset originale e quelle dei modelli addestrati sui dataset ribilanciati, da notare che il modello addestrato sul dataset al quale è applicato lo SMOTEENN è risultato migliore ma leggermente al di sotto dei risultati ottenuti con il modello basato sull'albero di classificazione. \\
 	\linebreak
 	\linebreak
 	
@@ -553,14 +554,21 @@
 		\end{figure}
 	\end{center}
 	
-	In questo caso applicando il cost sensitive learning al Naive Bayes possiamo notare un miglioramento nelle prestazioni del modello addestrato sul dataset originale, mentre i risultati per gli modelli sono leggermente superiori ai precedenti.
+	In questo caso, applicando il cost sensitive learning al Naive Bayes, possiamo notare un miglioramento nelle prestazioni del modello addestrato sul dataset originale, mentre i risultati per gli altri modelli sono leggermente superiori ai precedenti.
 	
 	\subsubsection{Considerazioni}
-	In questo caso il miglioramento si nota, si intervenendo sulla distribuzione delle classi, ma anche applicando il cost-sensitive learning.
+	Anche in questo, come il modello precedente, il miglioramento si nota intervenendo sulla distribuzione delle classi, ma anche applicando il cost-sensitive learning.
 	
 	
 	\section{Conclusioni}
-	
-
+	Il nostro obiettivo principale era sviluppare un modello in grado di predire correttamente se un copro celeste rilevato vicino alla Terra fosse innoquo o meno per la stessa. Attraverso un'attenta analisi dei dati, l'ingegnerizzazione delle feature e l'addestramento di diversi modelli, siamo riusciti a raggiungere risultati significativi. \\
+	\linebreak
+	In primo luogo, abbiamo eseguito un'analisi esplorativa dei dati per comprendere la distribuzione delle variabili, identificare eventuali valori mancanti o outlier e comprendere le relazioni tra le feature. Successivamente, abbiamo effettuato una pre-elaborazione dei dati, andando ad eleminare attributi inutili ed affrontando il problema delle classi sbilanciate, sperimentando sulle varie combinazioni inerenti all'undersampling, oversampling sui dati e cost-sensitive leanring per gli algoritmi.\\
+	\linebreak
+	Abbiamo testato in particolare due tra i più famosi algoritmi di machine learning, tra cui decision tree (C4.5) e Naive Bayes, al fine di identificare il modello che ottenesse le migliori prestazioni in relazione alle diverse istanze del dataset. Dopo un'accurata validazione incrociata e l'ottimizzazione dei parametri, abbiamo selezionato l'algoritmo C4.5 come modello finale, avendo molti indicatori superiori al 90\%.\\
+	\linebreak
+	È importante sottolineare che, nonostante i risultati promettenti, ci sono ancora aree di miglioramento. Ad esempio, potremmo esplorare ulteriormente altre tecniche di feature engineering o considerare l'utilizzo di modelli di deep learning per ottenere risultati ancora migliori. \\
+	\linebreak
+	In conclusione, questa sperimentazione ha dimostrato che con una corretta pre-elaborazione e l'addestramento di modelli appropriati, è possibile ottenere risultati significativi. Tuttavia, ci sono ancora sfide e possibilità di miglioramento, che possono essere affrontate attraverso ulteriori ricerche.
 	
 \end{document}

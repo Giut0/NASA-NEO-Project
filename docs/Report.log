@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.2)  10 JUN 2023 11:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.2)  11 JUN 2023 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -878,7 +878,7 @@ LaTeX Info: Redefining \nameref on input line 43.
 
 LaTeX Warning: No \author given.
 
-<./images//image.png, id=91, 450.68375pt x 361.35pt>
+<./images//image.png, id=143, 450.68375pt x 361.35pt>
 File: ./images//image.png Graphic file (type png)
 <use ./images//image.png>
 Package pdftex.def Info: ./images//image.png  used on input line 61.
@@ -913,19 +913,13 @@ Overfull \hbox (2.35422pt too wide) in paragraph at lines 91--92
 i ampiamente
  []
 
-
-Overfull \hbox (1.63622pt too wide) in paragraph at lines 96--99
-\T1/cmr/m/n/12 sensitive (meta) sul dataset originale, il dataset su coi è appl
-icato il resampling
- []
-
 [3]
-Overfull \hbox (8.2361pt too wide) in paragraph at lines 102--103
-\T1/cmr/m/n/12 Per raggiungere uno scopo si è utilizzato CRISP-DM (CRoss Indust
-ry Standard
+Overfull \hbox (7.58345pt too wide) in paragraph at lines 102--103
+\T1/cmr/m/n/12 Per raggiungere lo scopo si è utilizzato il CRISP-DM (CRoss Indu
+stry Standard
  []
 
-<./images//CRISP-DM.png, id=138, 1003.75pt x 821.0675pt>
+<./images//CRISP-DM.png, id=192, 1003.75pt x 821.0675pt>
 File: ./images//CRISP-DM.png Graphic file (type png)
 <use ./images//CRISP-DM.png>
 Package pdftex.def Info: ./images//CRISP-DM.png  used on input line 106.
@@ -961,96 +955,96 @@ iversity
  []
 
 [5]
-Overfull \hbox (4.66609pt too wide) in paragraph at lines 142--143
-[]\T1/cmr/m/it/12 miss_distance \T1/cmr/m/n/12 [numeric]: Distanza minima tra i
+Overfull \hbox (2.22086pt too wide) in paragraph at lines 143--144
+[]\T1/cmr/m/it/12 miss_distance \T1/cmr/m/n/12 [numeric]: distanza minima tra i
 l NEO e la Terra durante
  []
 
 
-Overfull \hbox (1.0876pt too wide) in paragraph at lines 145--146
+Overfull \hbox (1.0876pt too wide) in paragraph at lines 146--147
 []\T1/cmr/m/it/12 absolute_magnitude \T1/cmr/m/n/12 [numeric]: descrizione dell
 a luminosità dell'oggetto
  []
 
 
-Overfull \hbox (24.83478pt too wide) in paragraph at lines 163--164
+Overfull \hbox (24.83478pt too wide) in paragraph at lines 164--165
 \T1/cmr/m/n/12 Lo scalido piò arduo da affrontare riguarda sicuramente la natur
 a delle osservazioni
  []
 
-<./images//imbcalss.png, id=158, 294.8616pt x 281.1303pt>
+<./images//imbcalss.png, id=212, 294.8616pt x 281.1303pt>
 File: ./images//imbcalss.png Graphic file (type png)
 <use ./images//imbcalss.png>
-Package pdftex.def Info: ./images//imbcalss.png  used on input line 168.
+Package pdftex.def Info: ./images//imbcalss.png  used on input line 169.
 (pdftex.def)             Requested size: 215.24716pt x 205.2234pt.
 [6]
-Overfull \hbox (36.55127pt too wide) in paragraph at lines 177--178
+Overfull \hbox (36.55127pt too wide) in paragraph at lines 178--179
 \T1/cmr/m/n/12 sottoinsieme, questo si applicherebbe alla classe più numerosa, 
 mentre l'oversampling
  []
 
 
-Overfull \hbox (18.01695pt too wide) in paragraph at lines 177--178
+Overfull \hbox (18.01695pt too wide) in paragraph at lines 178--179
 \T1/cmr/m/n/12 sposta il focus sulla classe con meno occorrenze andando a crear
 e ^^Psinteticamente^^Q
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--186
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
 
  []
 
 [7 <./images//imbcalss.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 188.
-<./images//imb_graph.png, id=184, 425.6703pt x 312.2064pt>
+put line 189.
+<./images//imb_graph.png, id=236, 425.6703pt x 312.2064pt>
 File: ./images//imb_graph.png Graphic file (type png)
 <use ./images//imb_graph.png>
-Package pdftex.def Info: ./images//imb_graph.png  used on input line 206.
+Package pdftex.def Info: ./images//imb_graph.png  used on input line 207.
 (pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
-<./images//smoteenn_graph.png, id=185, 425.6703pt x 312.2064pt>
+<./images//smoteenn_graph.png, id=237, 425.6703pt x 312.2064pt>
 File: ./images//smoteenn_graph.png Graphic file (type png)
 <use ./images//smoteenn_graph.png>
-Package pdftex.def Info: ./images//smoteenn_graph.png  used on input line 209.
+Package pdftex.def Info: ./images//smoteenn_graph.png  used on input line 210.
 (pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
 
-Overfull \hbox (35.66925pt too wide) in paragraph at lines 206--210
+Overfull \hbox (35.66925pt too wide) in paragraph at lines 207--211
  [][][][][][] 
  []
 
 
-Overfull \hbox (26.69673pt too wide) in paragraph at lines 212--214
+Overfull \hbox (26.69673pt too wide) in paragraph at lines 213--215
 \T1/cmr/m/n/12 sinteticamente dei nuovi dati per la classe minoritaria consider
 ando la distribuzione
  []
 
 File: ./images//imb_graph.png Graphic file (type png)
 <use ./images//imb_graph.png>
-Package pdftex.def Info: ./images//imb_graph.png  used on input line 240.
+Package pdftex.def Info: ./images//imb_graph.png  used on input line 241.
 (pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
-<./images//adasyn_graph.png, id=186, 425.6703pt x 312.2064pt>
+<./images//adasyn_graph.png, id=238, 425.6703pt x 312.2064pt>
 File: ./images//adasyn_graph.png Graphic file (type png)
 <use ./images//adasyn_graph.png>
-Package pdftex.def Info: ./images//adasyn_graph.png  used on input line 243.
+Package pdftex.def Info: ./images//adasyn_graph.png  used on input line 244.
 (pdftex.def)             Requested size: 212.83463pt x 156.10281pt.
 
-Overfull \hbox (35.66925pt too wide) in paragraph at lines 240--244
+Overfull \hbox (35.66925pt too wide) in paragraph at lines 241--245
  [][][][][][] 
  []
 
 
-Overfull \hbox (14.23174pt too wide) in paragraph at lines 247--248
+Overfull \hbox (14.23174pt too wide) in paragraph at lines 248--249
 \T1/cmr/m/n/12 considerare una classificazione binaria, ad ogni tipo di predizi
 one viene asseganto
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
@@ -1058,21 +1052,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
 bfigure.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.265 	
+l.266 	
        pdfTeX warning (ext4): destination with the same identifier (name{subfig
 ure.1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.265 	
+l.266 	
         <./images//imb_graph.png> <./images//smoteenn_graph.png> <./images//ada
 syn_graph.png>]
-Overfull \hbox (5.4353pt too wide) in paragraph at lines 267--269
-\T1/cmr/m/n/12 Il \T1/cmr/m/it/12 threshold factor \T1/cmr/m/n/12 è un valore c
-he consente la classificazione di una osservazione
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
+\T1/cmr/m/n/12 valori \T1/cmr/m/it/12 true\T1/cmr/m/n/12 ).
  []
 
 
-Overfull \hbox (17.95186pt too wide) in paragraph at lines 281--282
+Overfull \hbox (17.95186pt too wide) in paragraph at lines 282--283
 \T1/cmr/m/n/12 Tenendo conto di tutte le considerazioni fatte, la parte inerent
 e all'addestramento
  []
@@ -1081,14 +1074,14 @@ e all'addestramento
 
 pdfTeX warning: pdflatex (file ./images//metodology_graph.pdf): PDF inclusion: 
 found PDF version <1.7>, but at most version <1.5> allowed
-<./images//metodology_graph.pdf, id=216, 2232.08907pt x 1237.82225pt>
+<./images//metodology_graph.pdf, id=266, 2232.08907pt x 1237.82225pt>
 File: ./images//metodology_graph.pdf Graphic file (type pdf)
 <use ./images//metodology_graph.pdf>
-Package pdftex.def Info: ./images//metodology_graph.pdf  used on input line 286
+Package pdftex.def Info: ./images//metodology_graph.pdf  used on input line 287
 .
 (pdftex.def)             Requested size: 426.79134pt x 236.68079pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 286--287
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 287--288
  [][] 
  []
 
@@ -1096,13 +1089,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 286--287
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (48.61917pt too wide) in paragraph at lines 294--295
-[]\T1/cmr/m/n/12 Naive Bayes, in particolare la variante Complement Naive Bayes
- (particolarmente
- []
-
-
-Overfull \hbox (2.04216pt too wide) in paragraph at lines 298--300
+Overfull \hbox (2.04216pt too wide) in paragraph at lines 299--301
 \T1/cmr/m/n/12 training $\OML/cmm/m/it/12 S$ \T1/cmr/m/n/12 e l'iniseme delle c
 lassi $\OML/cmm/m/it/12 C \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 
 c[]; c[]; [] ; c[]\OMS/cmsy/m/n/12 g$\T1/cmr/m/n/12 , ad ogni nodo dell'albero,
@@ -1111,253 +1098,321 @@ c[]; c[]; [] ; c[]\OMS/cmsy/m/n/12 g$\T1/cmr/m/n/12 , ad ogni nodo dell'albero,
 
 [11]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-06.
+07.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (21.05223pt too wide) in paragraph at lines 306--307
+Overfull \hbox (21.05223pt too wide) in paragraph at lines 307--308
 []\T1/cmtt/m/n/12 DecisionTreeClassifier().fit(X_train, y_train)\T1/cmr/m/n/12 
 , classificatore cost-
  []
 
 
-Overfull \hbox (9.78424pt too wide) in paragraph at lines 307--308
+Overfull \hbox (9.78424pt too wide) in paragraph at lines 308--309
 []\T1/cmtt/m/n/12 DecisionTreeClassifier(class_weight="balanced").fit(X_train,
  []
 
 
-Overfull \hbox (3.52032pt too wide) in paragraph at lines 307--308
+Overfull \hbox (3.52032pt too wide) in paragraph at lines 308--309
 \T1/cmtt/m/n/12 y_train)\T1/cmr/m/n/12 , classificatore cost-sensitive addesstr
 ato su il dataset originale,
  []
 
 [12 <./images//metodology_graph.pdf>]
-Overfull \hbox (6.66425pt too wide) in paragraph at lines 311--311
+Overfull \hbox (6.66425pt too wide) in paragraph at lines 312--312
 []\T1/cmr/m/n/12 N.B. L'attributo \T1/cmtt/m/n/12 class_weight \T1/cmr/m/n/12 è
  stato impostato a \T1/cmtt/m/n/12 "balanced" \T1/cmr/m/n/12 per andare
  []
 
 
-Overfull \hbox (3.39418pt too wide) in paragraph at lines 329--332
+Overfull \hbox (3.39418pt too wide) in paragraph at lines 330--333
 \T1/cmr/m/n/12 Nel nostro caso abbiamo allenato il modello con i tre dataset, d
 ataset originale,
  []
 
 
-Overfull \hbox (2.48053pt too wide) in paragraph at lines 329--332
+Overfull \hbox (2.48053pt too wide) in paragraph at lines 330--333
 \T1/cmr/m/n/12 il dataset ribilanciato con SMOTEENN e il dataset ribilanciato c
 on ADASYN. 
  []
 
 
-Overfull \hbox (14.94606pt too wide) in paragraph at lines 334--335
-\T1/cmr/m/n/12 sottoinsiemi (folds), $\OML/cmm/m/it/12 D[]; D[]; [] ; D[]$\T1/c
-mr/m/n/12 , prevede $\OML/cmm/m/it/12 k$ \T1/cmr/m/n/12 iterazioni ed all'$\OML
-/cmm/m/it/12 i$\T1/cmr/m/n/12 -esima iterazione
+Overfull \hbox (2.02072pt too wide) in paragraph at lines 335--336
+\T1/cmr/m/n/12 Fold-Cross-Validation, che esegue la riprtizione del dataset $\O
+ML/cmm/m/it/12 D$ \T1/cmr/m/n/12 in k sottoinsiemi
+ []
+
+
+Overfull \hbox (22.51646pt too wide) in paragraph at lines 335--336
+\T1/cmr/m/n/12 (folds), $\OML/cmm/m/it/12 D[]; D[]; [] ; D[]$ \T1/cmr/m/n/12 pr
+evede $\OML/cmm/m/it/12 k$ \T1/cmr/m/n/12 iterazioni ed all'$\OML/cmm/m/it/12 i
+$\T1/cmr/m/n/12 -esima iterazione il sottoinsieme
  []
 
 [13]
-Overfull \hbox (2.7499pt too wide) in paragraph at lines 341--342
+Overfull \hbox (2.7499pt too wide) in paragraph at lines 342--343
 []\T1/cmr/m/n/12 ma nel nostro caso, avendo un dataset fortemente sbilanciato, 
 non bastano,
  []
 
 
-Overfull \hbox (31.0762pt too wide) in paragraph at lines 347--349
+Overfull \hbox (31.0762pt too wide) in paragraph at lines 348--350
 \T1/cmr/m/n/12 correttamente gli esempi positivi rispetto a quelli negativi, in
 dipendentemente
  []
 
 
-Overfull \hbox (7.1141pt too wide) in paragraph at lines 353--355
+Overfull \hbox (7.1141pt too wide) in paragraph at lines 354--356
 \T1/cmr/m/n/12 In questa sezione verranno riportati tutte le metriche discusse 
 per ogni modello,
  []
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 35
-9.
-
-
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 35
-9.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
+0.
 
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
-2.
+0.
 
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
 3.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
+4.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--404
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
 []|\T1/cmr/m/n/10 F-measure
  []
 
 [14]
-<./images//DecTree.png, id=335, 395.3169pt x 314.3745pt>
+<./images//DecTree.png, id=382, 395.3169pt x 314.3745pt>
 File: ./images//DecTree.png Graphic file (type png)
 <use ./images//DecTree.png>
-Package pdftex.def Info: ./images//DecTree.png  used on input line 411.
+Package pdftex.def Info: ./images//DecTree.png  used on input line 412.
 (pdftex.def)             Requested size: 288.57892pt x 229.49147pt.
 
-Overfull \hbox (17.88643pt too wide) in paragraph at lines 417--420
-\T1/cmr/m/n/12 dataset originale sono abbastanze basse, sui 0.69, mentre con i 
-dataset ribilanciati
- []
-
-
-Overfull \hbox (27.74095pt too wide) in paragraph at lines 417--420
-\T1/cmr/m/n/12 sono molto più alte, quindi possimao riscontrare più o meno lo s
-tesso miglioramento
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 417--420
+Underfull \hbox (badness 10000) in paragraph at lines 418--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--420
+Underfull \hbox (badness 10000) in paragraph at lines 418--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--420
+Underfull \hbox (badness 10000) in paragraph at lines 418--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--433
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--443
+Underfull \hbox (badness 10000) in paragraph at lines 444--444
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--452
+Underfull \hbox (badness 10000) in paragraph at lines 453--453
 []|\T1/cmr/m/n/10 F-measure
  []
 
 [15 <./images//DecTree.png>]
-<./images//DecTreeCostSens.png, id=344, 395.3169pt x 314.3745pt>
+<./images//DecTreeCostSens.png, id=390, 395.3169pt x 314.3745pt>
 File: ./images//DecTreeCostSens.png Graphic file (type png)
 <use ./images//DecTreeCostSens.png>
-Package pdftex.def Info: ./images//DecTreeCostSens.png  used on input line 458.
+Package pdftex.def Info: ./images//DecTreeCostSens.png  used on input line 459.
 
 (pdftex.def)             Requested size: 288.57892pt x 229.49147pt.
 
-Overfull \hbox (48.49431pt too wide) in paragraph at lines 462--463
+Overfull \hbox (48.49431pt too wide) in paragraph at lines 463--464
 []\T1/cmr/m/n/12 Anche per il Cost-sensitive learning con la matrice di costo d
 efinita precedentemente
  []
 
 
-Overfull \hbox (4.24683pt too wide) in paragraph at lines 465--467
+Overfull \hbox (4.24683pt too wide) in paragraph at lines 466--468
 \T1/cmr/m/n/12 estremamente importante che può influenzare, positivamente o neg
 ativamente,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--483
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--493
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--502
+Underfull \hbox (badness 10000) in paragraph at lines 503--503
 []|\T1/cmr/m/n/10 F-measure
  []
 
 [16 <./images//DecTreeCostSens.png>]
-<./images//Bayes.png, id=354, 395.3169pt x 314.3745pt>
+<./images//Bayes.png, id=398, 395.3169pt x 314.3745pt>
 File: ./images//Bayes.png Graphic file (type png)
 <use ./images//Bayes.png>
-Package pdftex.def Info: ./images//Bayes.png  used on input line 508.
+Package pdftex.def Info: ./images//Bayes.png  used on input line 509.
 (pdftex.def)             Requested size: 288.57892pt x 229.49147pt.
 
-Overfull \hbox (3.44565pt too wide) in paragraph at lines 512--515
-\T1/cmr/m/n/12 addestrato sull dataset al quale è applicato lo SMOTEENN è risul
-tato migliore
+Overfull \hbox (12.23495pt too wide) in paragraph at lines 513--516
+[]\T1/cmr/m/n/12 In questo caso applicando con il Naive Bayes possiamo riscontr
+are un'enorme
  []
 
 
-Overfull \hbox (9.66348pt too wide) in paragraph at lines 512--515
+Overfull \hbox (0.18257pt too wide) in paragraph at lines 513--516
+\T1/cmr/m/n/12 addestrato sul dataset al quale è applicato lo SMOTEENN è risult
+ato migliore
+ []
+
+
+Overfull \hbox (9.01085pt too wide) in paragraph at lines 513--516
 \T1/cmr/m/n/12 ma leggermente al di sotto dei risultati ottenuti con il modello
- basato sull''albero
+ basato sull'albero
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--515
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 512--515
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--515
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--528
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--537
+Underfull \hbox (badness 10000) in paragraph at lines 538--538
 []|\T1/cmr/m/n/10 F-measure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--546
+Underfull \hbox (badness 10000) in paragraph at lines 547--547
 []|\T1/cmr/m/n/10 F-measure
  []
 
-<./images//BayesCostSens.png, id=355, 395.3169pt x 314.3745pt>
+<./images//BayesCostSens.png, id=399, 395.3169pt x 314.3745pt>
 File: ./images//BayesCostSens.png Graphic file (type png)
 <use ./images//BayesCostSens.png>
-Package pdftex.def Info: ./images//BayesCostSens.png  used on input line 552.
+Package pdftex.def Info: ./images//BayesCostSens.png  used on input line 553.
 (pdftex.def)             Requested size: 288.57892pt x 229.49147pt.
 [17 <./images//Bayes.png>]
-Overfull \hbox (2.90245pt too wide) in paragraph at lines 556--557
-[]\T1/cmr/m/n/12 In questo caso applicando il cost sensitive learning al Naive 
-Bayes possiamo
+Overfull \hbox (9.9507pt too wide) in paragraph at lines 557--558
+[]\T1/cmr/m/n/12 In questo caso, applicando il cost sensitive learning al Naive
+ Bayes, possiamo
  []
 
-[18 <./images//BayesCostSens.png>] (./Report.aux)
-Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: EDCBE788F93452033050CC5FE1F2CB9D;3320.
+
+Overfull \hbox (24.08223pt too wide) in paragraph at lines 560--561
+\T1/cmr/m/n/12 Anche in questo, come il modello precedente, il miglioramento si
+ nota intervenendo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--573
+
+ []
+
+
+Overfull \hbox (14.0971pt too wide) in paragraph at lines 564--573
+\T1/cmr/m/n/12 In primo luogo, abbiamo eseguito un'analisi esplorativa dei dati
+ per comprendere
+ []
+
+
+Overfull \hbox (0.22237pt too wide) in paragraph at lines 564--573
+\T1/cmr/m/n/12 e comprendere le relazioni tra le feature. Successivamente, abbi
+amo effettuato
+ []
+
+
+Overfull \hbox (2.54976pt too wide) in paragraph at lines 564--573
+\T1/cmr/m/n/12 combinazioni inerenti all'undersampling, oversampling sui dati e
+ cost-sensitive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--573
+
+ []
+
+
+Overfull \hbox (0.5445pt too wide) in paragraph at lines 564--573
+\T1/cmr/m/n/12 ancora aree di miglioramento. Ad esempio, potremmo esplorare ult
+eriormente
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--573
+
+ []
+
+
+Overfull \hbox (0.72263pt too wide) in paragraph at lines 564--573
+\T1/cmr/m/n/12 pre-elaborazione e l'addestramento di modelli appropriati, è pos
+sibile ottenere
+ []
+
+
+Overfull \hbox (20.06158pt too wide) in paragraph at lines 564--573
+\T1/cmr/m/n/12 risultati significativi. Tuttavia, ci sono ancora sfide e possib
+ilità di miglioramento,
+ []
+
+[18 <./images//BayesCostSens.png>] [19] (./Report.aux)
+
+Package rerunfilecheck Warning: File `Report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Report.out':
+(rerunfilecheck)             Before: 75DC1397222EB420EDECD8702415C4EB;5451
+(rerunfilecheck)             After:  AFD6437B0ECC3681082A0C3BE3721013;3446.
  ) 
 Here is how much of TeX's memory you used:
- 25223 strings out of 480171
- 472989 string characters out of 5894490
+ 25237 strings out of 480171
+ 473259 string characters out of 5894490
  772552 words of memory out of 5000000
- 42633 multiletter control sequences out of 15000+600000
+ 42646 multiletter control sequences out of 15000+600000
  484833 words of font info for 61 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 94i,12n,92p,648b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,12n,92p,650b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600
 pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.60
 0pk> </home/giuto/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.6
@@ -1376,10 +1431,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Report.pdf (18 pages, 1332161 bytes).
+Output written on Report.pdf (19 pages, 1339661 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
- 353 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 870 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 340 words of extra memory for PDF output out of 10000 (max. 10000000)
 
