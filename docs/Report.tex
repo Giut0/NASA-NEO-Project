@@ -88,7 +88,7 @@
 
 	
 	\subsection{Definizione obiettivo principale}
-	L'obiettivo principale del progetto è quello di addestrare un modello per andare a predirre, in base ad alcuni parametri, quali corpi celesti rilevati attorno alla terra possono provocare danni, questo perchè è ormai ampiamente accettato dalla comunità scientifica che le collisioni di asteroidi con la Terra avvenute in passato hanno avuto un ruolo significativo nel disegnare la storia geologica e biologica del pianeta, per questo risulta interessante effettuare un task di classificazione binaria che coinvolge la feature \textit{hazardous} con classi:
+	L'obiettivo principale del progetto è quello di addestrare un modello per andare a predire, in base ad alcuni parametri, quali corpi celesti rilevati attorno alla terra possono provocare danni, questo perchè è ormai ampiamente accettato dalla comunità scientifica che le collisioni di asteroidi con la Terra avvenute in passato hanno avuto un ruolo significativo nel disegnare la storia geologica e biologica del pianeta, per questo risulta interessante effettuare un task di classificazione binaria che coinvolge la feature \textit{hazardous} con classi:
 	\begin{itemize}
 		\item \textbf{True}: oggetto potenzialmente pericoloso.
 		\item \textbf{False}: oggetto non pericoloso.
@@ -111,7 +111,7 @@
 	\begin{enumerate}
 		\item \textbf{Buisness understanding}, dove si studia e si comprende il dominio applicativo e gli obiettivi da raggiungere, andando a produrre un project plan.
 		\item \textbf{Data understanding}, fase nella quale si identificano metodi per l'acquisizione dei dati, problemi legati a quest'ultimi, come la qualità, gli errori, etc.., quì avviene la fase di esplorazione preliminare del dataset.
-		\item \textbf{Data preparation}, preparazione del dataset(s) andando a determinare il sottoinsieme dei dati che più rappresenta il dataset in funzione degi obiettivi, pulendo il dataset da errori, valori mancanti, \textit{outliers} ed attributi non funzionali allo scopo (feature selection), attuare tecniche per andare a ribilanciare i dati e così via.
+		\item \textbf{Data preparation}, preparazione del dataset(s) andando a determinare il sottoinsieme dei dati che più rappresenta il dataset in funzione degli obiettivi, pulendo il dataset da errori, valori mancanti, \textit{outliers} ed attributi non funzionali allo scopo (feature selection), attuare tecniche per andare a ribilanciare i dati e così via.
 		\item \textbf{Modeling}, fase in cui si selezionano le tecniche di modeling andando a scegliere gli algoritmi da provare ed eseguendoli con i dovuti parametri, per poi andare a valutarli con le opportune metriche.
 		\item \textbf{Evaluation}, fase di confronto fra il data scientist ed il buisness owner per andare a valutare i risultati ottenuti in relazione agli obiettivi di buisness.
 		\item \textbf{Deployment}, fase finale di messa in produzione del modello selezionato.
@@ -265,8 +265,7 @@
 	Il cost-sensitive learning è utile in caso di sbilanciamento delle classi perchè da più peso agli errori di classificazione, in particolare nella classificazione dei FN (False Negative) cioè esempi classificati come \textit{false} ma che in realtà sono \textit{true}.
 	
 	\subsection{Threshold factor}
-	Il \textit{threshold factor} è un valore soglia che consente la classificazione di una osservazione $x$ in \textit{true} (assumendo che la classe minoritaria sia quella con valori \textit{true}).
-	\linebreak
+	Il \textit{threshold factor} è un valore soglia che consente la classificazione di una osservazione $x$ in \textit{true} (assumendo che la classe minoritaria sia quella con valori \textit{true}). \\
 	In particolare: $$p* = \frac{FP}{FP + FN} = \frac{C(1, 0)}{C(1, 0) + C(0, 1)}$$
 	Se $P(true, x) \ge p*$ allora $x$ viene classificato come \textit{true}.
 	
@@ -305,21 +304,11 @@
 	
 	\begin{itemize}
 		\item \texttt{DecisionTreeClassifier().fit(X\_train, y\_train)}, classificatore cost-insensitive addesstrato su il dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
-		\item \texttt{DecisionTreeClassifier(class\_weight="balanced").fit(X\_train, y\_train)}, classificatore cost-sensitive addesstrato su il dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
+		\item \texttt{DecisionTreeClassifier(class\_weight="balanced").fit(X\_train, y\_train)}, classificatore cost-sensitive addestrato su il dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
 		
 	\end{itemize}
 	
 	N.B. L'attributo \texttt{class\_weight} è stato impostato a \texttt{"balanced"} per andare a regolare automaticamente i pesi in modo inversamente proporzionale alle classi: $$w_{true} = \frac{N_s}{2\cdot N_{true}} \quad w_{false} = \frac{N_s}{2\cdot N_{false}} $$ dove $N_s$ è la cardinalità del dataset, $2$ rappresenta il numero di classi, $N_{true}$ e $N_{false}$ sono rispettivamente il numero di occorrenze con classe \textit{true} e con classe \textit{false}.
-	
-	
-	
-	%\subsection{Riduzione del rumore nei dati}
-	%I dati rumorosi sono privi di significato, che vanno ad inficiare le performance dei modelli allenati su di essi, per questo è sempre meglio ridurili, la presenza di rumore nei dati può essere dovuta a molteplici fattori, per es. il mancato funzionamento dei sensori che raccolgono dati, errori di programmazione, input incomprensibi e così via.
-%	Nel nostro caso il rumore si esprime attravero istanze duplicate e presenza di outlier. \\
-	%\linebreak
-	%Per andare a rimuovere i duplicati possiamo fare ricorso ad un fltro di \texttt{weka}, in particolare: \texttt{weka.filters.unsupervised.instance.RemoveDuplicates}, passando da 88283 osservazioni a 88253. \\
-	%\linebreak
-%	Per quanto riguarda gli outliers
 	
 	\subsubsection{Naive Bayes}
 	
@@ -415,7 +404,7 @@
 	
 	\end{center}
 	
-	Andando a valutere i risultati ottenuti possiamo notare che in tutti e tre i casi il valore dell'accuracy è molto alta, ma questo non basta, perchè tiene conto della distribuzione delle classi, mentre le metriche di principale interesse, nel nostro caso, la $f\beta-score$ e $ROC Area$ non dipendendo dalla distribuzione delle classi sono molto più significative, infatti nel caso del dataset originale sono appena sufficienti, sui 0.69, mentre con i dataset ribilanciati sono molto più alte, quindi possimao riscontrare più o meno lo stesso miglioramento andando a ribilanciare le classi con i due algoritmi. \\
+	Andando a valutere i risultati ottenuti possiamo notare che in tutti e tre i casi i valori dell'accuracy sono molto alti, ma questo non basta, perchè tiene conto della distribuzione delle classi, mentre le metriche di principale interesse, nel nostro caso, la $f\beta-score$ e $ROC Area$ non dipendendo dalla distribuzione delle classi sono molto più significative, infatti nel caso del dataset originale sono appena sufficienti, sui 0.69, mentre con i dataset ribilanciati sono molto più alte, quindi possimao riscontrare più o meno lo stesso miglioramento andando a ribilanciare le classi con i due algoritmi. \\
 	\linebreak
 	\linebreak
 	
