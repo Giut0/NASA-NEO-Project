@@ -46,18 +46,23 @@
 		\Large \textbf{NASA - Nearest Earth Objects hazard detection}
 	\end{center}
 	
-	
-	
 	\begin{center}
 		by \\
-		\Large \textbf{Vito Proscia mat. 735975}
+		\Large \textbf{Vito Proscia mat. 735975} \\
 	\end{center}
-
-	
+	\vspace{4px}
+	\begin{center}
+		Email: \href{mailto:v.proscia3@studenti.uniba.it}{v.proscia3@studenti.uniba.it}
+	\end{center}
+	\vspace{50px}
 	\begin{figure}[hb]
 		\centering
 		\includegraphics[width=5cm]{image.png}
 	\end{figure}
+	\vspace{50px}
+	\begin{center}
+		Repository github: \href{https://github.com/Giut0/NASA-NEO-Project}{NASA-NEO-Project}
+	\end{center}
 	
 	\vfill
 	\begin{center}
@@ -67,9 +72,8 @@
 	\newpage
 	
 	\tableofcontents
-
+	
 	\newpage
-
 	
 	\section{Introduzione}
 
@@ -319,7 +323,7 @@
 	Nel nostro caso abbiamo allenato il modello con i tre dataset, dataset originale, il dataset ribilanciato con SMOTEENN e il dataset ribilanciato con ADASYN.
 	
 	\section{Valutazione dei modelli}
-	Per andare a valutare i modelli prodotti dopo l'addestramento si è usata la k-Fold-Cross-Validation, che esegue la riprtizione del dataset $D$ in k sottoinsiemi (folds), $D_1, D_2, \dots, D_k$ prevede $k$ iterazioni ed all'$i$-esima iterazione il sottoinsieme $D_i$ sarà usato come dataset di test, metre l'unione degli altri sarà usata per allenare il modello.
+	Per andare a valutare i modelli prodotti dopo l'addestramento si è usata la k-Fold-Cross-Validation, che esegue la ripartizione del dataset $D$ in k sottoinsiemi (folds), $D_1, D_2, \dots, D_k$ prevede $k$ iterazioni ed all'$i$-esima iterazione il sottoinsieme $D_i$ sarà usato come dataset di test, metre l'unione degli altri sarà usata per allenare il modello.
 	
 	\subsection{Metriche scelte}
 	Ai fini della valutazione si hanno a disposizione moltissime metriche adatte per moltissime situazioni, le più comuni sono
@@ -455,7 +459,7 @@
 	
 	\subsection{Naive Bayes}
 	
-	\subsubsection{Cost-insensitive learning} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsubsection{Cost-insensitive learning}
 	
 	
 	\begin{center}
