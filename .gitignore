@@ -1,0 +1,17 @@
+# LaTex file
+*.log
+*.aux
+*.toc
+*.out
+*.bbl
+*.bcf
+*.blg
+*.pyg
+*.run.*
+*.gz
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+# Jupyter Notebook
+.ipynb_checkpoints
