@@ -1,5 +1,5 @@
 # NASA-NEO-Project 🔭
-Progetto finale del corso di Data Mining [Uniba](https://www.uniba.it/it/ricerca/dipartimenti/informatica)
+Progetto finale del corso di Data Mining [Uniba](https://www.uniba.it/it/ricerca/dipartimenti/informatica).
 
 Dataset source: https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects?select=neo_v2.csv
 
